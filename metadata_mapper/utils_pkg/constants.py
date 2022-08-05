@@ -9,7 +9,7 @@ import os
 
 class directories:
     ingestion_dir = os.path.normpath(
-        "catelas/shared/commsftp"
+        "catelas/shared/commsftp/Phase2"
     )
     output_dir = os.path.normpath(
         "catelas/shared/test_output"
@@ -18,7 +18,7 @@ class directories:
         "catelas/shared/processed"
     )
     log_dir = os.path.normpath(
-        "catelas/shared/scripts/1metadata_mapper/metadata_mapper/logging"
+        "catelas/shared/scripts/metadata_mapper/metadata_mapper/logging"
     )
     speechmatics_dir = os.path.normpath("home/ec2-user/transcribe/input")
     transcribed_dir = os.path.normpath("home/ec2-user/transcribe/output")
