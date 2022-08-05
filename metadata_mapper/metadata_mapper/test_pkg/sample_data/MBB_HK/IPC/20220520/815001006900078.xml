@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<x:recording xmlns:x="http://www.verint.com/xmlns/recording20080320" x:ref="815001006900078" x:version="11.2">
+
+  <x:segment x:version="4">
+    <x:complete>true</x:complete>
+    <x:master>true</x:master>
+    <x:keepcontent>true</x:keepcontent>
+    <x:keepxml>true</x:keepxml>
+    <x:rollbackrequired>false</x:rollbackrequired>
+    <x:rollbacktime>15</x:rollbacktime>
+    <x:compressiontype>4</x:compressiontype>
+    <x:compressed>true</x:compressed>
+    <x:rollbackid>51_00E0A708E36F_1140850690</x:rollbackid>
+    <x:contenttype>audio/vnd.verint.wav</x:contenttype>
+    <x:capturetype>IP</x:capturetype>
+    <x:starttime>2022-05-20T19:41:07.336+08:00</x:starttime>
+    <x:readytoarchive>true</x:readytoarchive>
+    <x:switch_id>815000051</x:switch_id>
+    <x:captureversion>15.1.0.3441</x:captureversion>
+    <x:tags>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:07.536+08:00">
+        <x:attribute x:key="rtptype">0</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:07.537+08:00">
+        <x:attribute x:key="callref">SIP/00E0A708E36F_1140850690/1649690459065</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:07.537+08:00">
+        <x:attribute x:key="datasource">51</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:07.537+08:00">
+        <x:attribute x:key="datasourcename">MAYBANK DATA SOURCE 1</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:07.537+08:00">
+        <x:attribute x:key="dataportid">-1</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:07.537+08:00">
+        <x:attribute x:key="extension">00E0A708E36F_1140850690</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:07.537+08:00">
+        <x:attribute x:key="lastinum">815001006900077</x:attribute>
+      </x:tag>
+      <x:tag x:forwardtosession="false" x:taggedbycomponent="IFServices" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:07.537+08:00">
+        <x:attribute x:key="calltype">Out</x:attribute>
+        <x:attribute x:key="consolename">00E0A708E36F</x:attribute>
+        <x:attribute x:key="datasourceid">51</x:attribute>
+        <x:attribute x:key="extension">00E0A708E36F_1140850690</x:attribute>
+        <x:attribute x:key="mc">00E0A708E36F_1140850690</x:attribute>
+        <x:attribute x:key="signallingcalledparty">793</x:attribute>
+        <x:attribute x:key="signallingcalledpartyname">Phoebe Wong</x:attribute>
+        <x:attribute x:key="signallingcallingparty">Recorder</x:attribute>
+        <x:attribute x:key="signallingcallingpartyname">Recorder</x:attribute>
+        <x:attribute x:key="traderid">793</x:attribute>
+        <x:attribute x:key="tradername">Phoebe Wong</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:07.537+08:00">
+        <x:attribute x:key="callparty">1</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:07.537+08:00">
+        <x:attribute x:key="primaryparty">1</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:07.537+08:00">
+        <x:attribute x:key="dstip">10.120.113.6:10092</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:07.537+08:00">
+        <x:attribute x:key="srcip">10.120.113.14:16426</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:07.538+08:00">
+        <x:attribute x:key="audiostarttime">2022-05-20T19:41:07.336+08:00</x:attribute>
+      </x:tag>
+      <x:tag x:forwardtosession="false" x:taggedbycomponent="IFServices" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:07.538+08:00">
+        <x:attribute x:key="mbhkimr1_latency">0</x:attribute>
+        <x:attribute x:key="mbhkimr1_offset">0</x:attribute>
+      </x:tag>
+      <x:tag x:forwardtosession="false" x:taggedbycomponent="IFServices" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:09.632+08:00">
+        <x:attribute x:key="calldirection">Outbound</x:attribute>
+        <x:attribute x:key="callername">3518 8793</x:attribute>
+        <x:attribute x:key="callid">1604739792788</x:attribute>
+        <x:attribute x:key="channel">0</x:attribute>
+        <x:attribute x:key="cpn">093121997</x:attribute>
+        <x:attribute x:key="devicestring">793H</x:attribute>
+        <x:attribute x:key="dialednumber">093121997</x:attribute>
+        <x:attribute x:key="dnis">793</x:attribute>
+        <x:attribute x:key="lineid">793</x:attribute>
+        <x:attribute x:key="mc">00E0A708E36F_1140850690</x:attribute>
+        <x:attribute x:key="traderid">793</x:attribute>
+        <x:attribute x:key="tradername">Phoebe Wong</x:attribute>
+        <x:attribute x:key="turretname">00E0A708E36F</x:attribute>
+      </x:tag>
+      <x:tag x:forwardtosession="false" x:taggedbycomponent="IFServices" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:41:09.632+08:00">
+        <x:attribute x:key="calldirection">Outbound</x:attribute>
+        <x:attribute x:key="callername">3518 8793</x:attribute>
+        <x:attribute x:key="callid">1604739792788</x:attribute>
+        <x:attribute x:key="channel">0</x:attribute>
+        <x:attribute x:key="cpn">093121997</x:attribute>
+        <x:attribute x:key="devicestring">793H</x:attribute>
+        <x:attribute x:key="dialednumber">093121997</x:attribute>
+        <x:attribute x:key="dnis">793</x:attribute>
+        <x:attribute x:key="lineid">793</x:attribute>
+        <x:attribute x:key="mc">00E0A708E36F_1140850690</x:attribute>
+        <x:attribute x:key="traderid">793</x:attribute>
+        <x:attribute x:key="tradername">Phoebe Wong</x:attribute>
+        <x:attribute x:key="turretname">00E0A708E36F</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:42:06.728+08:00">
+        <x:attribute x:key="durationms">54375</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:42:06.729+08:00">
+        <x:attribute x:key="endtime">2022-05-20T19:42:06.728+08:00</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:timestamp="2022-05-20T19:42:06.729+08:00">
+        <x:attribute x:key="stopreason">SilenceDetection</x:attribute>
+      </x:tag>
+    </x:tags>
+    <x:systemtype>trading</x:systemtype>
+    <x:shared_key>audio_51_00e0a708e36f_1140850690</x:shared_key>
+    <x:duration>54</x:duration>
+    <x:streams>
+      <x:stream>
+        <audiodurationinms>53240</audiodurationinms>
+        <dstip>10.120.113.6:10092</dstip>
+        <expectedpacketcount>2590</expectedpacketcount>
+        <firstpackettime>2022-05-20T19:41:07.336+08:00</firstpackettime>
+        <lastpackettime>2022-05-20T19:42:01.723+08:00</lastpackettime>
+        <missedrtppackets>0</missedrtppackets>
+        <rtptype>PCMU</rtptype>
+        <silencedurationinms>1180</silencedurationinms>
+        <srcip>10.120.113.14:16426</srcip>
+        <ssrcid>0x4e9bdc30</ssrcid>
+        <totalrtppackets>2662</totalrtppackets>
+      </x:stream>
+    </x:streams>
+  </x:segment>
+
+  <x:contacts>
+    <x:contact x:id="9204539013370000012" x:parent="true" x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:version="3">
+      <x:sessions>
+        <x:session x:ctiseen="false" x:id="2022052019421700581500100690007802" x:lastupdated="2022-05-20T19:42:17.005+08:00" x:parent="true" x:parentinum="815001006900078" x:taggedbycomponent="IPCapture" x:taggedbyhost="MBHKIMR1" x:version="2">
+          <x:complete>true</x:complete>
+          <x:interactiontype>Phone</x:interactiontype>
+          <x:mark>true</x:mark>
+          <x:inums>
+            <x:inum x:contenttype="audio/vnd.verint.wav" x:endtime="2022-05-20T19:42:06.728+08:00" x:starttime="2022-05-20T19:41:07.336+08:00">815001006900078</x:inum>
+          </x:inums>
+          <x:switch_id>815000051</x:switch_id>
+        </x:session>
+      </x:sessions>
+      <x:complete>true</x:complete>
+    </x:contact>
+  </x:contacts>
+
+</x:recording>

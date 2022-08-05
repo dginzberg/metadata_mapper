@@ -1,0 +1,12 @@
+{
+    "from_Phone_Number": "720",
+    "to_Phone_Number": "09323931304",
+    "date": "20220623",
+    "Time": "125121",
+    "Voice_file": "wav/20220623/09323931304_20220623_125121_720_O_.wav",
+    "Duration": "00:00:13",
+    "Country_code": "",
+    "Direction": "outbound",
+    "Name_Recipient": "Reliance-Mumbai",
+    "Name_Dialler": "Conferance"
+}
