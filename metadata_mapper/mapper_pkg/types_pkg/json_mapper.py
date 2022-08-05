@@ -30,11 +30,23 @@ class Json_Mapper(Mapper):
             self.logger.debug("mapping file: %s", file.file)
             try:
                 self.ingest_data(file)
-                self.map_data(file)
-                output.append(self.write_json(file, speechmatics_dir).name)
-                self.successful += 1
-                processed.append(file)
             except:
-                self.logger.error("failed to map file: %s", file.file)
+                self.logger.error("failed to ingest data from file: %s", file.file)
                 failed.append(file)
+                continue
+            try:
+                self.map_data(file)
+            except:
+                self.logger.error("failed to map file: %s, with data: %s", file.file, file.data_dict)
+                failed.append(file)
+                continue
+            try:
+                output.append(self.write_json(file, speechmatics_dir).name)
+            except:
+                self.logger.error("failed to write json: %s", file.file)
+                failed.append(file)
+                continue
+            
+            self.successful += 1
+            processed.append(file)
         return (mapper_files(processed), mapper_files(output), mapper_files(failed))

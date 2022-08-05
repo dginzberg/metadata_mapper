@@ -1,6 +1,5 @@
 # mapper_pkg/mapper_controller --
 # TODO: change move distutils is depricated
-from asyncio.log import logger
 from calendar import c
 from distutils.file_util import move_file
 import os
@@ -47,10 +46,9 @@ class Mapper_Controller:
             self.file_handler = logging.FileHandler(
                 self.log_file, mode="a", encoding=None, delay=False
             )
-            logger = logging.getLogger()
-            logger.addHandler(self.file_handler)
-            console_handler = logging.StreamHandler(sys.stdout)
-            console_handler.setLevel(logging.DEBUG)
+            self.logger = logging.getLogger()
+            self.logger.addHandler(self.file_handler)
+            self.logger.setLevel(logging.DEBUG)
 
     def submit_transcribed(self):
         for file in os.listdir(self.transcribed_dir):
@@ -61,13 +59,17 @@ class Mapper_Controller:
 
     def ingest_files(self):
         for root, d_names, f_names in os.walk(self.ingestion_dir):
-            logger.debug.debug('root: %s', root)
+            self.logger.debug('root: %s', root)
             for f in f_names:
-                f = os.path.join(root, f)
-                logger.debug.debug('ingest file: %s', f)
-                self.files.append(f)
-        logger.debug.debug('ingested files: %s', self.files)
+                try:
+                    f = os.path.join(root, f)
+                    self.logger.debug('ingest file: %s', f)
+                    self.files.append(f)
+                except:
+                    logger.error("failed to ingest file: %s", f)
+        self.logger.debug('ingested files: %s', self.files)
         self.files = mapper_files(self.files)
+        
 
     def map_files(self):
         # PLAN: add xml_mapper initator once XML_Mapper is done
@@ -76,15 +78,19 @@ class Mapper_Controller:
         self.processed_files.append(xml_mapper.run_mapper())"""
         if len(self.files.json_files) > 0:
             # PLAN: exception handling on failure on mapping to continue upon failure
-            logger.debug.debug('starting json_mapper')
-            json_mapper = Json_Mapper(self.files)
-            json_processed, json_output, json_failed = json_mapper.run_mapper(
-                self.speechmatics_dir
-            )
-            self.processed_files = self.processed_files + json_processed.all_files
-            self.output_files = self.output_files + json_output.all_files
-            self.failed_files = self.failed_files + json_failed.all_files
-            logger.debug.info('processed_files: %s, output_files: %s failed_files: %s', self.processed_files, self.output_files, self.failed_files)
+            self.logger.debug('starting json_mapper')
+            try:
+                json_mapper = Json_Mapper(self.files)
+                json_processed, json_output, json_failed = json_mapper.run_mapper(
+                    self.speechmatics_dir
+                )
+                self.processed_files = self.processed_files + json_processed.all_files
+                self.output_files = self.output_files + json_output.all_files
+                self.failed_files = self.failed_files + json_failed.all_files
+                self.logger.info('successful: %d processed_files: %s, output_files: %s failed_files: %s', json_mapper.successful,  self.processed_files, self.output_files, self.failed_files)
+            except:
+                logger.error("failed to run json mapper")
+           
             # PLAN: add filename_mapper initator once Filename_Mapper is done
         """ if len(files.filename) > 0:
             filename_mapper = Filename_Mapper(files.filename)
@@ -101,9 +107,6 @@ class Mapper_Controller:
         self.ingest_files()
         self.map_files()
         # self.mv_processed()
-        print( self.processed_files)
-        print(self.output_files)
-        print(self.failed_files)
 
 
 if __name__ == "__main__":

@@ -9,7 +9,7 @@ import os
 
 class directories:
     ingestion_dir = os.path.abspath(
-        "/catelas/shared/commsftp/Phase2/Zoom/ZoomMeeting"
+        "/catelas/shared/commsftp/Phase2"
     )
     output_dir = os.path.abspath(
         "/catelas/shared/test_output"
@@ -20,7 +20,7 @@ class directories:
     log_dir = os.path.abspath(
         "/catelas/shared/scripts/metadata_mapper/metadata_mapper/logging"
     )
-    speechmatics_dir = os.path.abspath("/home/ec2-user/transcribe/input_test")
+    speechmatics_dir = os.path.abspath("/home/ec2-user/transcribe/uat_input")
     transcribed_dir = os.path.abspath("/home/ec2-user/transcribe/output")
 
 
