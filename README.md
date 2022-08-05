@@ -34,5 +34,5 @@ __Prior to running:__
 
 
   - [ ] logging points
-          - [ ] automate build
-          - [ ] env fixes and cleanup 
+          [ ] automate build
+          [ ] env fixes and cleanup 
