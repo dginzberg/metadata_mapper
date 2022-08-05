@@ -72,10 +72,11 @@ class Mapper_Controller:
 
     def start_mapping(self):
         self.ingest_files()
-        result = self.map_files()
+        self.map_files()
         # self.mv_processed()
-        stdout(result)
-        return result
+        print( self.processed_files)
+        print(self.output_files)
+        print(self.failed_files)
 
 
 if __name__ == "__main__":

@@ -8,20 +8,20 @@ import os
 
 
 class directories:
-    ingestion_dir = os.path.normpath(
-        "catelas/shared/commsftp/Phase2"
+    ingestion_dir = os.path.abspath(
+        "/catelas/shared/commsftp/Phase2/Zoom/ZoomMeeting"
     )
-    output_dir = os.path.normpath(
-        "catelas/shared/test_output"
+    output_dir = os.path.abspath(
+        "/catelas/shared/test_output"
     )
-    processed_dir = os.path.normpath(
-        "catelas/shared/processed"
+    processed_dir = os.path.abspath(
+        "/catelas/shared/processed"
     )
-    log_dir = os.path.normpath(
-        "catelas/shared/scripts/metadata_mapper/metadata_mapper/logging"
+    log_dir = os.path.abspath(
+        "/catelas/shared/scripts/metadata_mapper/metadata_mapper/logging"
     )
-    speechmatics_dir = os.path.normpath("home/ec2-user/transcribe/input")
-    transcribed_dir = os.path.normpath("home/ec2-user/transcribe/output")
+    speechmatics_dir = os.path.abspath("/home/ec2-user/transcribe/input_test")
+    transcribed_dir = os.path.abspath("/home/ec2-user/transcribe/output")
 
 
 class data_info:
