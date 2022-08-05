@@ -1,0 +1,12 @@
+{
+    "from_Phone_Number": "709",
+    "to_Phone_Number": "07966215700",
+    "date": "20220623",
+    "Time": "125102",
+    "Voice_file": "wav/20220623/07966215700_20220623_125102_709_O_.wav",
+    "Duration": "00:04:13",
+    "Country_code": "",
+    "Direction": "outbound",
+    "Name_Recipient": "Ahmedabad",
+    "Name_Dialler": "Makarand Wa"
+}

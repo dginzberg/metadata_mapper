@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<x:recording xmlns:x="http://www.verint.com/xmlns/recording20080320" x:ref="238001003601700" x:version="11.2">
+
+  <x:segment x:version="18">
+    <x:complete>true</x:complete>
+    <x:master>true</x:master>
+    <x:keepcontent>true</x:keepcontent>
+    <x:keepxml>true</x:keepxml>
+    <x:rollbackrequired>false</x:rollbackrequired>
+    <x:rollbacktime>15</x:rollbacktime>
+    <x:compressiontype>4</x:compressiontype>
+    <x:compressed>true</x:compressed>
+    <x:rollbackid>1_00E0A708D130_1140850692</x:rollbackid>
+    <x:tenant_id>0</x:tenant_id>
+    <x:dualmarking>false</x:dualmarking>
+    <x:primary>true</x:primary>
+    <x:errorpriority>0</x:errorpriority>
+    <x:contenttype>audio/vnd.verint.wav</x:contenttype>
+    <x:capturetype>IP</x:capturetype>
+    <x:starttime>2022-05-16T07:05:11.561+08:00</x:starttime>
+    <x:readytoarchive>true</x:readytoarchive>
+    <x:switch_id>238000001</x:switch_id>
+    <x:captureversion></x:captureversion>
+    <x:systemtype>trading</x:systemtype>
+    <x:tags>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.866+08:00">
+        <x:attribute x:key="callref">SIP/AUDIO/00E0A708D130_1140850692/1652499364418</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.866+08:00">
+        <x:attribute x:key="datasourcename">Unigy DS</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.866+08:00">
+        <x:attribute x:key="datasource">1</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.866+08:00">
+        <x:attribute x:key="dataportid">-1</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.867+08:00">
+        <x:attribute x:key="extension">00E0A708D130_1140850692</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.867+08:00">
+        <x:attribute x:key="lastinum">238001003601694</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.868+08:00">
+        <x:attribute x:key="audiostarttime">2022-05-16T07:05:11.561+08:00</x:attribute>
+      </x:tag>
+      <x:tag x:forwardtosession="false" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.905+08:00">
+        <x:attribute x:key="mpirecord1_latency">0</x:attribute>
+        <x:attribute x:key="mpirecord1_offset">0</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:17.171+08:00">
+        <x:attribute x:key="endtime">2022-05-16T07:05:17.169+08:00</x:attribute>
+      </x:tag>
+      <x:tag x:taggedbycomponent="IPCapture" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:17.172+08:00">
+        <x:attribute x:key="stopreason">SilenceDetection</x:attribute>
+      </x:tag>
+    </x:tags>
+    <x:shared_key>audio_1_00e0a708d130_1140850692</x:shared_key>
+    <x:duration>2</x:duration>
+    <x:contentfilesize>1444</x:contentfilesize>
+    <x:streams>
+      <x:stream>
+        <x:audiodurationinms>1980</x:audiodurationinms>
+        <x:dstip>10.118.131.5:10084</x:dstip>
+        <x:durationinms>1960</x:durationinms>
+        <x:firstpackettime>2022-05-16T07:05:11.561+08:00</x:firstpackettime>
+        <x:lastpackettime>2022-05-16T07:05:13.563+08:00</x:lastpackettime>
+        <x:missedrtppackets>0</x:missedrtppackets>
+        <x:rtptype>0</x:rtptype>
+        <x:rtptypename>PCMU</x:rtptypename>
+        <x:silencedurationinms>0</x:silencedurationinms>
+        <x:srcip>10.118.150.17:16398</x:srcip>
+        <x:ssrc>0x34d0a01e</x:ssrc>
+        <x:ssrc>0x34d0a01e</x:ssrc>
+        <x:totalrtppackets>99</x:totalrtppackets>
+      </x:stream>
+    </x:streams>
+  </x:segment>
+
+  <x:contacts>
+    <x:contact x:id="9204535103110030012" x:parent="true" x:taggedbycomponent="IPCapture" x:taggedbyhost="mpirecord1">
+      <x:sessions>
+        <x:session x:ctiseen="false" x:id="2022051607051186423800100360170002" x:lastupdated="2022-05-16T07:05:11.865+08:00" x:parent="true" x:parentinum="238001003601700" x:taggedbycomponent="IPCapture" x:taggedbyhost="mpirecord1">
+          <x:complete>true</x:complete>
+          <x:interactiontype>Phone</x:interactiontype>
+          <x:mark>true</x:mark>
+          <x:inums>
+            <x:inum x:contenttype="audio/vnd.verint.wav" x:endtime="" x:starttime="2022-05-16T07:05:11.862+08:00">238001003601700</x:inum>
+          </x:inums>
+          <x:agent_id>238000019</x:agent_id>
+          <x:datasourceid>1</x:datasourceid>
+          <x:direction>UNKNOWN</x:direction>
+          <x:employeename>Cathlyn So</x:employeename>
+          <x:extension>8009 Mixed</x:extension>
+          <x:is_mute>false</x:is_mute>
+          <x:mc>00E0A708D130_1140850692</x:mc>
+          <x:name>FinancialTrading</x:name>
+          <x:organization_id>237996998</x:organization_id>
+          <x:pbx_login_id>8009</x:pbx_login_id>
+          <x:switch_id>238000001</x:switch_id>
+          <x:tenant_id>0</x:tenant_id>
+          <x:time_offset>480</x:time_offset>
+          <x:satellitetags>
+            <x:satellitetag x:name="FinancialTrading">
+              <x:recording_reference>00E0A708D130_1140850692</x:recording_reference>
+              <x:turret_id>8009</x:turret_id>
+              <x:turret_name>00E0A708D130</x:turret_name>
+            </x:satellitetag>
+          </x:satellitetags>
+        </x:session>
+      </x:sessions>
+      <x:complete>true</x:complete>
+    </x:contact>
+    <x:contact x:id="9145350430020000011" x:parent="false" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="3">
+      <x:sessions>
+        <x:session x:ctiseen="true" x:id="2022051605250025204326202923800101" x:lastupdated="2022-05-16T07:30:05.507+08:00" x:parent="false" x:parentinum="238001003601649" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="2">
+          <x:complete>true</x:complete>
+          <x:agent_id>238000019</x:agent_id>
+          <x:ani>Tradition_IRS</x:ani>
+          <x:datasource>1</x:datasource>
+          <x:direction>Outbound</x:direction>
+          <x:dnis>Tradition_IRS</x:dnis>
+          <x:duration>7500</x:duration>
+          <x:employeename>Edrick John Santos</x:employeename>
+          <x:errorpriority>0</x:errorpriority>
+          <x:extension>8009 Speaker 5</x:extension>
+          <x:number_of_holds>0</x:number_of_holds>
+          <x:total_hold_time>0</x:total_hold_time>
+          <x:interactiontype>TradingSpeaker</x:interactiontype>
+          <x:is_mute>false</x:is_mute>
+          <x:mark>true</x:mark>
+          <x:organization_id>237996998</x:organization_id>
+          <x:pbx_login_id>8009</x:pbx_login_id>
+          <x:starttime>2022-05-16T05:25:00.252+08:00</x:starttime>
+          <x:switch_call_id>00E0A708D130/S5/1652635092498</x:switch_call_id>
+          <x:switch_id>238000001</x:switch_id>
+          <x:tenant_id>0</x:tenant_id>
+          <x:time_offset>480</x:time_offset>
+          <x:wrapup_time>0</x:wrapup_time>
+          <x:inums>
+            <x:inum x:contenttype="audio/vnd.verint.wav" x:endtime="2022-05-16T07:05:17.169+08:00" x:starttime="2022-05-16T07:05:11.561+08:00">238001003601700</x:inum>
+          </x:inums>
+          <x:tags>
+            <x:tag x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.879+08:00">
+              <x:attribute x:key="agentid">8009</x:attribute>
+              <x:attribute x:key="agentname">Cathlyn So</x:attribute>
+              <x:attribute x:key="agentpk">19</x:attribute>
+              <x:attribute x:key="ani">Tradition_IRS</x:attribute>
+              <x:attribute x:key="calldirection">Outbound</x:attribute>
+              <x:attribute x:key="channelnumber">003601700</x:attribute>
+              <x:attribute x:key="datasourcename">Unigy DS</x:attribute>
+              <x:attribute x:key="device_number">5</x:attribute>
+              <x:attribute x:key="dnis">Tradition_IRS</x:attribute>
+              <x:attribute x:key="externalcallid">00E0A708D130/S5/1652635092498</x:attribute>
+              <x:attribute x:key="interactiontype">TradingSpeaker</x:attribute>
+              <x:attribute x:key="is_mute">false</x:attribute>
+              <x:attribute x:key="line_name">mpimg1s1p1ch11</x:attribute>
+              <x:attribute x:key="mimemediatype">Audio</x:attribute>
+              <x:attribute x:key="modulenumber">238001</x:attribute>
+              <x:attribute x:key="numberofholds">0</x:attribute>
+              <x:attribute x:key="numberoftimesconference">0</x:attribute>
+              <x:attribute x:key="numberoftimestransferred">0</x:attribute>
+              <x:attribute x:key="organization">Maybank</x:attribute>
+              <x:attribute x:key="parties">8009 Speaker 5</x:attribute>
+              <x:attribute x:key="pauseduration">0</x:attribute>
+              <x:attribute x:key="recording_reference">00E0A708D130_1140850692</x:attribute>
+              <x:attribute x:key="serialnumber">238001</x:attribute>
+              <x:attribute x:key="timeonhold">0</x:attribute>
+              <x:attribute x:key="turret_id">8009</x:attribute>
+              <x:attribute x:key="turret_name">00E0A708D130</x:attribute>
+              <x:attribute x:key="ultraagentid">238000019</x:attribute>
+            </x:tag>
+          </x:tags>
+        </x:session>
+      </x:sessions>
+      <x:complete>true</x:complete>
+    </x:contact>
+    <x:contact x:id="9145350430020010011" x:parent="false" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="8">
+      <x:sessions>
+        <x:session x:ctiseen="true" x:id="2022051605250025204326203023800101" x:lastupdated="2022-05-16T07:30:05.527+08:00" x:parent="false" x:parentinum="238001003601649" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="5">
+          <x:complete>true</x:complete>
+          <x:agent_id>238000019</x:agent_id>
+          <x:ani>GFI_GS1</x:ani>
+          <x:datasource>1</x:datasource>
+          <x:direction>Outbound</x:direction>
+          <x:dnis>GFI_GS1</x:dnis>
+          <x:duration>7500</x:duration>
+          <x:employeename>Edrick John Santos</x:employeename>
+          <x:errorpriority>0</x:errorpriority>
+          <x:extension>8009 Speaker 8</x:extension>
+          <x:number_of_holds>0</x:number_of_holds>
+          <x:total_hold_time>0</x:total_hold_time>
+          <x:interactiontype>TradingSpeaker</x:interactiontype>
+          <x:is_mute>false</x:is_mute>
+          <x:mark>true</x:mark>
+          <x:organization_id>237996998</x:organization_id>
+          <x:pbx_login_id>8009</x:pbx_login_id>
+          <x:starttime>2022-05-16T05:25:00.252+08:00</x:starttime>
+          <x:switch_call_id>00E0A708D130/S8/1652635111638</x:switch_call_id>
+          <x:switch_id>238000001</x:switch_id>
+          <x:tenant_id>0</x:tenant_id>
+          <x:time_offset>480</x:time_offset>
+          <x:wrapup_time>0</x:wrapup_time>
+          <x:inums>
+            <x:inum x:contenttype="audio/vnd.verint.wav" x:endtime="2022-05-16T07:05:17.169+08:00" x:starttime="2022-05-16T07:05:11.561+08:00">238001003601700</x:inum>
+          </x:inums>
+          <x:tags>
+            <x:tag x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.883+08:00">
+              <x:attribute x:key="agentid">8009</x:attribute>
+              <x:attribute x:key="agentname">Cathlyn So</x:attribute>
+              <x:attribute x:key="agentpk">19</x:attribute>
+              <x:attribute x:key="ani">GFI_GS1</x:attribute>
+              <x:attribute x:key="calldirection">Outbound</x:attribute>
+              <x:attribute x:key="channelnumber">003601700</x:attribute>
+              <x:attribute x:key="datasourcename">Unigy DS</x:attribute>
+              <x:attribute x:key="device_number">8</x:attribute>
+              <x:attribute x:key="dnis">GFI_GS1</x:attribute>
+              <x:attribute x:key="externalcallid">00E0A708D130/S8/1652635111638</x:attribute>
+              <x:attribute x:key="interactiontype">TradingSpeaker</x:attribute>
+              <x:attribute x:key="is_mute">false</x:attribute>
+              <x:attribute x:key="line_name">mpimg1s1p1ch8</x:attribute>
+              <x:attribute x:key="mimemediatype">Audio</x:attribute>
+              <x:attribute x:key="modulenumber">238001</x:attribute>
+              <x:attribute x:key="numberofholds">0</x:attribute>
+              <x:attribute x:key="numberoftimesconference">0</x:attribute>
+              <x:attribute x:key="numberoftimestransferred">0</x:attribute>
+              <x:attribute x:key="organization">Maybank</x:attribute>
+              <x:attribute x:key="parties">8009 Speaker 8</x:attribute>
+              <x:attribute x:key="pauseduration">0</x:attribute>
+              <x:attribute x:key="recording_reference">00E0A708D130_1140850692</x:attribute>
+              <x:attribute x:key="serialnumber">238001</x:attribute>
+              <x:attribute x:key="timeonhold">0</x:attribute>
+              <x:attribute x:key="turret_id">8009</x:attribute>
+              <x:attribute x:key="turret_name">00E0A708D130</x:attribute>
+              <x:attribute x:key="ultraagentid">238000019</x:attribute>
+            </x:tag>
+          </x:tags>
+        </x:session>
+      </x:sessions>
+      <x:complete>true</x:complete>
+    </x:contact>
+    <x:contact x:id="9145350430020020011" x:parent="false" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="7">
+      <x:sessions>
+        <x:session x:ctiseen="true" x:id="2022051605250025304326203123800101" x:lastupdated="2022-05-16T07:30:05.525+08:00" x:parent="false" x:parentinum="238001003601649" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="4">
+          <x:complete>true</x:complete>
+          <x:agent_id>238000019</x:agent_id>
+          <x:ani>Tradition_Spot</x:ani>
+          <x:datasource>1</x:datasource>
+          <x:direction>Outbound</x:direction>
+          <x:dnis>Tradition_Spot</x:dnis>
+          <x:duration>7500</x:duration>
+          <x:employeename>Edrick John Santos</x:employeename>
+          <x:errorpriority>0</x:errorpriority>
+          <x:extension>8009 Speaker 2</x:extension>
+          <x:number_of_holds>0</x:number_of_holds>
+          <x:total_hold_time>0</x:total_hold_time>
+          <x:interactiontype>TradingSpeaker</x:interactiontype>
+          <x:is_mute>false</x:is_mute>
+          <x:mark>true</x:mark>
+          <x:organization_id>237996998</x:organization_id>
+          <x:pbx_login_id>8009</x:pbx_login_id>
+          <x:starttime>2022-05-16T05:25:00.253+08:00</x:starttime>
+          <x:switch_call_id>00E0A708D130/S2/1652635092299</x:switch_call_id>
+          <x:switch_id>238000001</x:switch_id>
+          <x:tenant_id>0</x:tenant_id>
+          <x:time_offset>480</x:time_offset>
+          <x:wrapup_time>0</x:wrapup_time>
+          <x:inums>
+            <x:inum x:contenttype="audio/vnd.verint.wav" x:endtime="2022-05-16T07:05:17.169+08:00" x:starttime="2022-05-16T07:05:11.561+08:00">238001003601700</x:inum>
+          </x:inums>
+          <x:tags>
+            <x:tag x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.888+08:00">
+              <x:attribute x:key="agentid">8009</x:attribute>
+              <x:attribute x:key="agentname">Cathlyn So</x:attribute>
+              <x:attribute x:key="agentpk">19</x:attribute>
+              <x:attribute x:key="ani">Tradition_Spot</x:attribute>
+              <x:attribute x:key="calldirection">Outbound</x:attribute>
+              <x:attribute x:key="channelnumber">003601700</x:attribute>
+              <x:attribute x:key="datasourcename">Unigy DS</x:attribute>
+              <x:attribute x:key="device_number">2</x:attribute>
+              <x:attribute x:key="dnis">Tradition_Spot</x:attribute>
+              <x:attribute x:key="externalcallid">00E0A708D130/S2/1652635092299</x:attribute>
+              <x:attribute x:key="interactiontype">TradingSpeaker</x:attribute>
+              <x:attribute x:key="is_mute">false</x:attribute>
+              <x:attribute x:key="line_name">mpimg1s1p1ch3</x:attribute>
+              <x:attribute x:key="mimemediatype">Audio</x:attribute>
+              <x:attribute x:key="modulenumber">238001</x:attribute>
+              <x:attribute x:key="numberofholds">0</x:attribute>
+              <x:attribute x:key="numberoftimesconference">0</x:attribute>
+              <x:attribute x:key="numberoftimestransferred">0</x:attribute>
+              <x:attribute x:key="organization">Maybank</x:attribute>
+              <x:attribute x:key="parties">8009 Speaker 2</x:attribute>
+              <x:attribute x:key="pauseduration">0</x:attribute>
+              <x:attribute x:key="recording_reference">00E0A708D130_1140850692</x:attribute>
+              <x:attribute x:key="serialnumber">238001</x:attribute>
+              <x:attribute x:key="timeonhold">0</x:attribute>
+              <x:attribute x:key="turret_id">8009</x:attribute>
+              <x:attribute x:key="turret_name">00E0A708D130</x:attribute>
+              <x:attribute x:key="ultraagentid">238000019</x:attribute>
+            </x:tag>
+          </x:tags>
+        </x:session>
+      </x:sessions>
+      <x:complete>true</x:complete>
+    </x:contact>
+    <x:contact x:id="9145350430020030011" x:parent="false" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="9">
+      <x:sessions>
+        <x:session x:ctiseen="true" x:id="2022051605250025404326203223800101" x:lastupdated="2022-05-16T07:30:05.528+08:00" x:parent="false" x:parentinum="238001003601649" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="6">
+          <x:complete>true</x:complete>
+          <x:agent_id>238000019</x:agent_id>
+          <x:ani>Prebon_IRS</x:ani>
+          <x:datasource>1</x:datasource>
+          <x:direction>Outbound</x:direction>
+          <x:dnis>Prebon_IRS</x:dnis>
+          <x:duration>7500</x:duration>
+          <x:employeename>Edrick John Santos</x:employeename>
+          <x:errorpriority>0</x:errorpriority>
+          <x:extension>8009 Speaker 7</x:extension>
+          <x:number_of_holds>0</x:number_of_holds>
+          <x:total_hold_time>0</x:total_hold_time>
+          <x:interactiontype>TradingSpeaker</x:interactiontype>
+          <x:is_mute>false</x:is_mute>
+          <x:mark>true</x:mark>
+          <x:organization_id>237996998</x:organization_id>
+          <x:pbx_login_id>8009</x:pbx_login_id>
+          <x:starttime>2022-05-16T05:25:00.254+08:00</x:starttime>
+          <x:switch_call_id>00E0A708D130/S7/1652635102527</x:switch_call_id>
+          <x:switch_id>238000001</x:switch_id>
+          <x:tenant_id>0</x:tenant_id>
+          <x:time_offset>480</x:time_offset>
+          <x:wrapup_time>0</x:wrapup_time>
+          <x:inums>
+            <x:inum x:contenttype="audio/vnd.verint.wav" x:endtime="2022-05-16T07:05:17.169+08:00" x:starttime="2022-05-16T07:05:11.561+08:00">238001003601700</x:inum>
+          </x:inums>
+          <x:tags>
+            <x:tag x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.892+08:00">
+              <x:attribute x:key="agentid">8009</x:attribute>
+              <x:attribute x:key="agentname">Cathlyn So</x:attribute>
+              <x:attribute x:key="agentpk">19</x:attribute>
+              <x:attribute x:key="ani">Prebon_IRS</x:attribute>
+              <x:attribute x:key="calldirection">Outbound</x:attribute>
+              <x:attribute x:key="channelnumber">003601700</x:attribute>
+              <x:attribute x:key="datasourcename">Unigy DS</x:attribute>
+              <x:attribute x:key="device_number">7</x:attribute>
+              <x:attribute x:key="dnis">Prebon_IRS</x:attribute>
+              <x:attribute x:key="externalcallid">00E0A708D130/S7/1652635102527</x:attribute>
+              <x:attribute x:key="interactiontype">TradingSpeaker</x:attribute>
+              <x:attribute x:key="is_mute">false</x:attribute>
+              <x:attribute x:key="line_name">mpimg1s1p1ch21</x:attribute>
+              <x:attribute x:key="mimemediatype">Audio</x:attribute>
+              <x:attribute x:key="modulenumber">238001</x:attribute>
+              <x:attribute x:key="numberofholds">0</x:attribute>
+              <x:attribute x:key="numberoftimesconference">0</x:attribute>
+              <x:attribute x:key="numberoftimestransferred">0</x:attribute>
+              <x:attribute x:key="organization">Maybank</x:attribute>
+              <x:attribute x:key="parties">8009 Speaker 7</x:attribute>
+              <x:attribute x:key="pauseduration">0</x:attribute>
+              <x:attribute x:key="recording_reference">00E0A708D130_1140850692</x:attribute>
+              <x:attribute x:key="serialnumber">238001</x:attribute>
+              <x:attribute x:key="timeonhold">0</x:attribute>
+              <x:attribute x:key="turret_id">8009</x:attribute>
+              <x:attribute x:key="turret_name">00E0A708D130</x:attribute>
+              <x:attribute x:key="ultraagentid">238000019</x:attribute>
+            </x:tag>
+          </x:tags>
+        </x:session>
+      </x:sessions>
+      <x:complete>true</x:complete>
+    </x:contact>
+    <x:contact x:id="9145350430020040011" x:parent="false" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="12">
+      <x:sessions>
+        <x:session x:ctiseen="true" x:id="2022051605250025504326203323800101" x:lastupdated="2022-05-16T07:30:05.544+08:00" x:parent="false" x:parentinum="238001003601649" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="10">
+          <x:complete>true</x:complete>
+          <x:agent_id>238000019</x:agent_id>
+          <x:ani>Amstel_Spot</x:ani>
+          <x:datasource>1</x:datasource>
+          <x:direction>Outbound</x:direction>
+          <x:dnis>Amstel_Spot</x:dnis>
+          <x:duration>7500</x:duration>
+          <x:employeename>Edrick John Santos</x:employeename>
+          <x:errorpriority>0</x:errorpriority>
+          <x:extension>8009 Speaker 1</x:extension>
+          <x:number_of_holds>0</x:number_of_holds>
+          <x:total_hold_time>0</x:total_hold_time>
+          <x:interactiontype>TradingSpeaker</x:interactiontype>
+          <x:is_mute>false</x:is_mute>
+          <x:mark>true</x:mark>
+          <x:organization_id>237996998</x:organization_id>
+          <x:pbx_login_id>8009</x:pbx_login_id>
+          <x:starttime>2022-05-16T05:25:00.255+08:00</x:starttime>
+          <x:switch_call_id>00E0A708D130/S1/1652635092115</x:switch_call_id>
+          <x:switch_id>238000001</x:switch_id>
+          <x:tenant_id>0</x:tenant_id>
+          <x:time_offset>480</x:time_offset>
+          <x:wrapup_time>0</x:wrapup_time>
+          <x:inums>
+            <x:inum x:contenttype="audio/vnd.verint.wav" x:endtime="2022-05-16T07:05:17.169+08:00" x:starttime="2022-05-16T07:05:11.561+08:00">238001003601700</x:inum>
+          </x:inums>
+          <x:tags>
+            <x:tag x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.896+08:00">
+              <x:attribute x:key="agentid">8009</x:attribute>
+              <x:attribute x:key="agentname">Cathlyn So</x:attribute>
+              <x:attribute x:key="agentpk">19</x:attribute>
+              <x:attribute x:key="ani">Amstel_Spot</x:attribute>
+              <x:attribute x:key="calldirection">Outbound</x:attribute>
+              <x:attribute x:key="channelnumber">003601700</x:attribute>
+              <x:attribute x:key="datasourcename">Unigy DS</x:attribute>
+              <x:attribute x:key="device_number">1</x:attribute>
+              <x:attribute x:key="dnis">Amstel_Spot</x:attribute>
+              <x:attribute x:key="externalcallid">00E0A708D130/S1/1652635092115</x:attribute>
+              <x:attribute x:key="interactiontype">TradingSpeaker</x:attribute>
+              <x:attribute x:key="is_mute">false</x:attribute>
+              <x:attribute x:key="line_name">mpimg1s1p1ch26</x:attribute>
+              <x:attribute x:key="mimemediatype">Audio</x:attribute>
+              <x:attribute x:key="modulenumber">238001</x:attribute>
+              <x:attribute x:key="numberofholds">0</x:attribute>
+              <x:attribute x:key="numberoftimesconference">0</x:attribute>
+              <x:attribute x:key="numberoftimestransferred">0</x:attribute>
+              <x:attribute x:key="organization">Maybank</x:attribute>
+              <x:attribute x:key="parties">8009 Speaker 1</x:attribute>
+              <x:attribute x:key="pauseduration">0</x:attribute>
+              <x:attribute x:key="recording_reference">00E0A708D130_1140850692</x:attribute>
+              <x:attribute x:key="serialnumber">238001</x:attribute>
+              <x:attribute x:key="timeonhold">0</x:attribute>
+              <x:attribute x:key="turret_id">8009</x:attribute>
+              <x:attribute x:key="turret_name">00E0A708D130</x:attribute>
+              <x:attribute x:key="ultraagentid">238000019</x:attribute>
+            </x:tag>
+          </x:tags>
+        </x:session>
+      </x:sessions>
+      <x:complete>true</x:complete>
+    </x:contact>
+    <x:contact x:id="9145350430020050011" x:parent="false" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="13">
+      <x:sessions>
+        <x:session x:ctiseen="true" x:id="2022051605250025504326203423800101" x:lastupdated="2022-05-16T07:30:05.547+08:00" x:parent="false" x:parentinum="238001003601649" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="11">
+          <x:complete>true</x:complete>
+          <x:agent_id>238000019</x:agent_id>
+          <x:ani>Prebon_GS1</x:ani>
+          <x:datasource>1</x:datasource>
+          <x:direction>Outbound</x:direction>
+          <x:dnis>Prebon_GS1</x:dnis>
+          <x:duration>7500</x:duration>
+          <x:employeename>Edrick John Santos</x:employeename>
+          <x:errorpriority>0</x:errorpriority>
+          <x:extension>8009 Speaker 6</x:extension>
+          <x:number_of_holds>0</x:number_of_holds>
+          <x:total_hold_time>0</x:total_hold_time>
+          <x:interactiontype>TradingSpeaker</x:interactiontype>
+          <x:is_mute>false</x:is_mute>
+          <x:mark>true</x:mark>
+          <x:organization_id>237996998</x:organization_id>
+          <x:pbx_login_id>8009</x:pbx_login_id>
+          <x:starttime>2022-05-16T05:25:00.255+08:00</x:starttime>
+          <x:switch_call_id>00E0A708D130/S6/1652635107520</x:switch_call_id>
+          <x:switch_id>238000001</x:switch_id>
+          <x:tenant_id>0</x:tenant_id>
+          <x:time_offset>480</x:time_offset>
+          <x:wrapup_time>0</x:wrapup_time>
+          <x:inums>
+            <x:inum x:contenttype="audio/vnd.verint.wav" x:endtime="2022-05-16T07:05:17.169+08:00" x:starttime="2022-05-16T07:05:11.561+08:00">238001003601700</x:inum>
+          </x:inums>
+          <x:tags>
+            <x:tag x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.899+08:00">
+              <x:attribute x:key="agentid">8009</x:attribute>
+              <x:attribute x:key="agentname">Cathlyn So</x:attribute>
+              <x:attribute x:key="agentpk">19</x:attribute>
+              <x:attribute x:key="ani">Prebon_GS1</x:attribute>
+              <x:attribute x:key="calldirection">Outbound</x:attribute>
+              <x:attribute x:key="channelnumber">003601700</x:attribute>
+              <x:attribute x:key="datasourcename">Unigy DS</x:attribute>
+              <x:attribute x:key="device_number">6</x:attribute>
+              <x:attribute x:key="dnis">Prebon_GS1</x:attribute>
+              <x:attribute x:key="externalcallid">00E0A708D130/S6/1652635107520</x:attribute>
+              <x:attribute x:key="interactiontype">TradingSpeaker</x:attribute>
+              <x:attribute x:key="is_mute">false</x:attribute>
+              <x:attribute x:key="line_name">mpimg1s1p1ch22</x:attribute>
+              <x:attribute x:key="mimemediatype">Audio</x:attribute>
+              <x:attribute x:key="modulenumber">238001</x:attribute>
+              <x:attribute x:key="numberofholds">0</x:attribute>
+              <x:attribute x:key="numberoftimesconference">0</x:attribute>
+              <x:attribute x:key="numberoftimestransferred">0</x:attribute>
+              <x:attribute x:key="organization">Maybank</x:attribute>
+              <x:attribute x:key="parties">8009 Speaker 6</x:attribute>
+              <x:attribute x:key="pauseduration">0</x:attribute>
+              <x:attribute x:key="recording_reference">00E0A708D130_1140850692</x:attribute>
+              <x:attribute x:key="serialnumber">238001</x:attribute>
+              <x:attribute x:key="timeonhold">0</x:attribute>
+              <x:attribute x:key="turret_id">8009</x:attribute>
+              <x:attribute x:key="turret_name">00E0A708D130</x:attribute>
+              <x:attribute x:key="ultraagentid">238000019</x:attribute>
+            </x:tag>
+          </x:tags>
+        </x:session>
+      </x:sessions>
+      <x:complete>true</x:complete>
+    </x:contact>
+    <x:contact x:id="9145350430020060011" x:parent="false" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="15">
+      <x:sessions>
+        <x:session x:ctiseen="true" x:id="2022051605250025604326203523800101" x:lastupdated="2022-05-16T07:30:05.559+08:00" x:parent="false" x:parentinum="238001003601649" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="14">
+          <x:complete>true</x:complete>
+          <x:agent_id>238000019</x:agent_id>
+          <x:ani>GFI_Spot</x:ani>
+          <x:datasource>1</x:datasource>
+          <x:direction>Outbound</x:direction>
+          <x:dnis>GFI_Spot</x:dnis>
+          <x:duration>7500</x:duration>
+          <x:employeename>Edrick John Santos</x:employeename>
+          <x:errorpriority>0</x:errorpriority>
+          <x:extension>8009 Speaker 3</x:extension>
+          <x:number_of_holds>0</x:number_of_holds>
+          <x:total_hold_time>0</x:total_hold_time>
+          <x:interactiontype>TradingSpeaker</x:interactiontype>
+          <x:is_mute>false</x:is_mute>
+          <x:mark>true</x:mark>
+          <x:organization_id>237996998</x:organization_id>
+          <x:pbx_login_id>8009</x:pbx_login_id>
+          <x:starttime>2022-05-16T05:25:00.256+08:00</x:starttime>
+          <x:switch_call_id>00E0A708D130/S3/1652635092363</x:switch_call_id>
+          <x:switch_id>238000001</x:switch_id>
+          <x:tenant_id>0</x:tenant_id>
+          <x:time_offset>480</x:time_offset>
+          <x:wrapup_time>0</x:wrapup_time>
+          <x:inums>
+            <x:inum x:contenttype="audio/vnd.verint.wav" x:endtime="2022-05-16T07:05:17.169+08:00" x:starttime="2022-05-16T07:05:11.561+08:00">238001003601700</x:inum>
+          </x:inums>
+          <x:tags>
+            <x:tag x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.904+08:00">
+              <x:attribute x:key="agentid">8009</x:attribute>
+              <x:attribute x:key="agentname">Cathlyn So</x:attribute>
+              <x:attribute x:key="agentpk">19</x:attribute>
+              <x:attribute x:key="ani">GFI_Spot</x:attribute>
+              <x:attribute x:key="calldirection">Outbound</x:attribute>
+              <x:attribute x:key="channelnumber">003601700</x:attribute>
+              <x:attribute x:key="datasourcename">Unigy DS</x:attribute>
+              <x:attribute x:key="device_number">3</x:attribute>
+              <x:attribute x:key="dnis">GFI_Spot</x:attribute>
+              <x:attribute x:key="externalcallid">00E0A708D130/S3/1652635092363</x:attribute>
+              <x:attribute x:key="interactiontype">TradingSpeaker</x:attribute>
+              <x:attribute x:key="is_mute">false</x:attribute>
+              <x:attribute x:key="line_name">mpimg1s1p1ch6</x:attribute>
+              <x:attribute x:key="mimemediatype">Audio</x:attribute>
+              <x:attribute x:key="modulenumber">238001</x:attribute>
+              <x:attribute x:key="numberofholds">0</x:attribute>
+              <x:attribute x:key="numberoftimesconference">0</x:attribute>
+              <x:attribute x:key="numberoftimestransferred">0</x:attribute>
+              <x:attribute x:key="organization">Maybank</x:attribute>
+              <x:attribute x:key="parties">8009 Speaker 3</x:attribute>
+              <x:attribute x:key="pauseduration">0</x:attribute>
+              <x:attribute x:key="recording_reference">00E0A708D130_1140850692</x:attribute>
+              <x:attribute x:key="serialnumber">238001</x:attribute>
+              <x:attribute x:key="timeonhold">0</x:attribute>
+              <x:attribute x:key="turret_id">8009</x:attribute>
+              <x:attribute x:key="turret_name">00E0A708D130</x:attribute>
+              <x:attribute x:key="ultraagentid">238000019</x:attribute>
+            </x:tag>
+          </x:tags>
+        </x:session>
+      </x:sessions>
+      <x:complete>true</x:complete>
+    </x:contact>
+    <x:contact x:id="9145350430020070011" x:parent="false" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="17">
+      <x:sessions>
+        <x:session x:ctiseen="true" x:id="2022051605250025704326203623800101" x:lastupdated="2022-05-16T07:30:05.569+08:00" x:parent="false" x:parentinum="238001003601649" x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:version="16">
+          <x:complete>true</x:complete>
+          <x:agent_id>238000019</x:agent_id>
+          <x:ani>Prebon_Spot</x:ani>
+          <x:datasource>1</x:datasource>
+          <x:direction>Outbound</x:direction>
+          <x:dnis>Prebon_Spot</x:dnis>
+          <x:duration>7500</x:duration>
+          <x:employeename>Edrick John Santos</x:employeename>
+          <x:errorpriority>0</x:errorpriority>
+          <x:extension>8009 Speaker 4</x:extension>
+          <x:number_of_holds>0</x:number_of_holds>
+          <x:total_hold_time>0</x:total_hold_time>
+          <x:interactiontype>TradingSpeaker</x:interactiontype>
+          <x:is_mute>false</x:is_mute>
+          <x:mark>true</x:mark>
+          <x:organization_id>237996998</x:organization_id>
+          <x:pbx_login_id>8009</x:pbx_login_id>
+          <x:starttime>2022-05-16T05:25:00.257+08:00</x:starttime>
+          <x:switch_call_id>00E0A708D130/S4/1652635092454</x:switch_call_id>
+          <x:switch_id>238000001</x:switch_id>
+          <x:tenant_id>0</x:tenant_id>
+          <x:time_offset>480</x:time_offset>
+          <x:wrapup_time>0</x:wrapup_time>
+          <x:inums>
+            <x:inum x:contenttype="audio/vnd.verint.wav" x:endtime="2022-05-16T07:05:17.169+08:00" x:starttime="2022-05-16T07:05:11.561+08:00">238001003601700</x:inum>
+          </x:inums>
+          <x:tags>
+            <x:tag x:taggedbycomponent="IFServices" x:taggedbyhost="mpirecord1" x:timestamp="2022-05-16T07:05:11.906+08:00">
+              <x:attribute x:key="agentid">8009</x:attribute>
+              <x:attribute x:key="agentname">Cathlyn So</x:attribute>
+              <x:attribute x:key="agentpk">19</x:attribute>
+              <x:attribute x:key="ani">Prebon_Spot</x:attribute>
+              <x:attribute x:key="calldirection">Outbound</x:attribute>
+              <x:attribute x:key="channelnumber">003601700</x:attribute>
+              <x:attribute x:key="datasourcename">Unigy DS</x:attribute>
+              <x:attribute x:key="device_number">4</x:attribute>
+              <x:attribute x:key="dnis">Prebon_Spot</x:attribute>
+              <x:attribute x:key="externalcallid">00E0A708D130/S4/1652635092454</x:attribute>
+              <x:attribute x:key="interactiontype">TradingSpeaker</x:attribute>
+              <x:attribute x:key="is_mute">false</x:attribute>
+              <x:attribute x:key="line_name">mpimg1s1p1ch19</x:attribute>
+              <x:attribute x:key="mimemediatype">Audio</x:attribute>
+              <x:attribute x:key="modulenumber">238001</x:attribute>
+              <x:attribute x:key="numberofholds">0</x:attribute>
+              <x:attribute x:key="numberoftimesconference">0</x:attribute>
+              <x:attribute x:key="numberoftimestransferred">0</x:attribute>
+              <x:attribute x:key="organization">Maybank</x:attribute>
+              <x:attribute x:key="parties">8009 Speaker 4</x:attribute>
+              <x:attribute x:key="pauseduration">0</x:attribute>
+              <x:attribute x:key="recording_reference">00E0A708D130_1140850692</x:attribute>
+              <x:attribute x:key="serialnumber">238001</x:attribute>
+              <x:attribute x:key="timeonhold">0</x:attribute>
+              <x:attribute x:key="turret_id">8009</x:attribute>
+              <x:attribute x:key="turret_name">00E0A708D130</x:attribute>
+              <x:attribute x:key="ultraagentid">238000019</x:attribute>
+            </x:tag>
+          </x:tags>
+        </x:session>
+      </x:sessions>
+      <x:complete>true</x:complete>
+    </x:contact>
+  </x:contacts>
+
+</x:recording>
