@@ -12,7 +12,7 @@ class TestMapperController:
         self.controller.ingest_files()
         assert len(self.controller.files.all_files) == 18
 
-    def test_map_files(self, test_files, test_info):
+    def test_map_files(self, test_info):
 
         for file in os.listdir(test_info.get("speechmatics_dir")):
             os.remove(os.path.join(test_info.get("speechmatics_dir"), file))

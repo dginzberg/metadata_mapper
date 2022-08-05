@@ -8,20 +8,14 @@ import os
 
 
 class directories:
-    ingestion_dir = os.path.abspath(
-        "/catelas/shared/commsftp/Phase2"
-    )
-    output_dir = os.path.abspath(
-        "/catelas/shared/test_output"
-    )
-    processed_dir = os.path.abspath(
-        "/catelas/shared/processed"
-    )
+    ingestion_dir = os.path.abspath("C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/input")
+    output_dir = os.path.abspath("C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/test_output")
+    processed_dir = os.path.abspath("C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/test_processed")
     log_dir = os.path.abspath(
-        "/catelas/shared/scripts/metadata_mapper/metadata_mapper/logging"
+        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/metadata_mapper/logging"
     )
-    speechmatics_dir = os.path.abspath("/home/ec2-user/transcribe/uat_input")
-    transcribed_dir = os.path.abspath("/home/ec2-user/transcribe/output")
+    speechmatics_dir = os.path.abspath("C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/metadata_mapper/test_pkg/speechmatics")
+    transcribed_dir = os.path.abspath("C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/transcribed")
 
 
 class data_info:
@@ -77,23 +71,6 @@ class regions:
     }
 
 
-# class softwares:
-#     datetime_format_ref = {
-#         "HKT": (["Date", "Time"], ["%Y-%m-%d", "%H:%M:%S"]),
-#         "Cisco": (["sessionStartDate"], ["", "%f"]),
-#         "Paudium": (["date", "Time"], ["%Y%m%d", "%f"]),
-#         "ZoomMeeting": (["recordingStartTime"], ["%Y-%m-%dT%H:%M:%S.%f%Z"]),
-#         "ZoomPhone": (["recordingStartTime"], ["%Y-%m-%dT%H:%M:%S.%f%Z"]),
-#     }  # TEMP: remove bracket after software typs are added
-#     # PLAN: add software types
-#     """  "IPC",
-#         "ARC",
-#         "Transonic",
-#         "Voicesoft",
-#     }
-#     """
-
-
 class labels:
     out_label_ref = ["datetime", "voice_file", "to_email", "from_email", "languages"]
     label_ref = {
@@ -128,16 +105,14 @@ class labels:
             "to_email": "calleeNumber",
             "from_email": "callerNumber",
         },
+        "IPC": {
+            'datetime': (['LocalStartTime'],["%Y-%m-%dT%H:%M:%S.%f%Z"]) ,
+            'voice_file': 'CAudioFile.File.Location',
+            'to_email': 'CAudioFile.CRI.AgentPBXID',
+            'from_email': 'CAudioFile.CRI.SID'
+        },
     }  # TEMP: remove bracket after XML is ready
     """  ,
-
-        # INFO:  (XML):
-        'IPC': {
-            'datetime': 'LocalStartTime',
-            'voice_file': 'Location',
-            'to_email': 'AgentPBXID',
-            'from_email': 'SID'
-        },
 
         # INFO: (Filename):
         # TODO: voice_file is name
