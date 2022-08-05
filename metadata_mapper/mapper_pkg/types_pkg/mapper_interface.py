@@ -56,7 +56,7 @@ class Mapper(metaclass=ABCMeta):
 
         if len(format[1]) == 1:
             date = format[0][0]
-            logger.debug("mapping datetime (just date):%s with format: %s", format[1], format[0][0])
+            self.logger.debug("mapping datetime (just date):%s with format: %s", format[1], format[0][0])
             # INFO: just date
             if ("+" or "-") in date:
                 if "+" in date:
@@ -67,22 +67,18 @@ class Mapper(metaclass=ABCMeta):
                 date = split_date[0][:26] + sign + split_date[1]
             try:
                 datetime.strptime(date, data_info.date_time_format)
-                logger.debug("result date: %s", date)
+                self.logger.debug("result date: %s", date)
                 return date
             except ValueError:
-                date = datetime.strptime(date, format[1][0])
-                .astimezone(pytz.UTC)
-                .strftime(data_info.date_time_format)
-                logger.debug("result date: %s", date)
+                date = datetime.strptime(date, format[1][0]).astimezone(pytz.UTC).strftime(data_info.date_time_format)
+                self.logger.debug("result date: %s", date)
                 return date
         elif format[1][0] == "":
             # INFO: epoch microseconds
-            logger.debug("mapping datetime (just time):%s with format: %s", format[1][0], format[0][0])
+            self.logger.debug("mapping datetime (just time):%s with format: %s", format[1][0], format[0][0])
             s = format[0][0] / 1000.0
-            date = datetime.fromtimestamp(s)
-            .astimezone(pytz.UTC)
-            .strftime(data_info.date_time_format)
-            logger.debug("result date: %s", date)
+            date = datetime.fromtimestamp(s).astimezone(pytz.UTC).strftime(data_info.date_time_format)
+            self.logger.debug("result date: %s", date)
             return date
         else:
             # INFO: date and time
@@ -90,11 +86,11 @@ class Mapper(metaclass=ABCMeta):
             time = format[0][1]
             date_format = format[1][0]
             time_format = format[1][1]
-            logger.debug("mapping datetime (Date and time) Date:%s Time:%s with format: %s (Date) %s (Time)", date, time, date_format, time_format)
+            self.logger.debug("mapping datetime (Date and time) Date:%s Time:%s with format: %s (Date) %s (Time)", date, time, date_format, time_format)
             date_time = datetime.strptime(
                 date + "T" + time, date_format + "T" + time_format
             ).astimezone(pytz.UTC).strftime(data_info.date_time_format)
-            logger.debug("result date: %s", date_time)
+            self.logger.debug("result date: %s", date_time)
             return date_time
 
     # PLAN : organize files by dir and date
