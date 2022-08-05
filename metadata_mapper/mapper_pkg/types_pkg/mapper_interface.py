@@ -23,7 +23,7 @@ class Mapper(metaclass=ABCMeta):
 
     def logger_config(self):
         self.log_file = os.path.join(
-            directories.log_dir, self.__module__.split(".")[-1], ".log"
+            directories.log_dir, self.__module__.split(".")[-1] + ".log"
         )
         if not os.path.isdir(os.path.dirname(self.log_file)):
             os.mkdir(os.path.dirname(self.log_file))
@@ -33,8 +33,10 @@ class Mapper(metaclass=ABCMeta):
         self.file_handler = logging.FileHandler(
             self.log_file, mode="a", encoding=None, delay=False
         )
+        self.logger = logging.getLogger()
+        self.logger.addHandler(self.file_handler)
         console_handler = logging.StreamHandler(sys.stdout)
-        console_handler.setLevel(logging.INFO)
+        console_handler.setLevel(logging.DEBUG)
 
     def final_logging(self):
         self.finish_time = time.time() - self.start_time
@@ -42,7 +44,8 @@ class Mapper(metaclass=ABCMeta):
         logging.info("          files provided: %d", self.files)
         logging.info("   successfully produced: %d", self.successful)
         logging.debug("              Time took: %s", self.finish_time)
-        logging.debug("            Memory Used: %d", self.mem_usage - self.start_mem)
+        logging.debug("            Memory Used: %d",
+                      self.mem_usage - self.start_mem)
 
     def get_process_memory():
         process = psutil.Process(os.getpid())

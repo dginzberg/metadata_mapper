@@ -2,7 +2,6 @@
 
 from cmath import log
 import json
-import logging
 
 from utils_pkg import data_info, regions, labels, mapper_files, directories
 from mapper_pkg.types_pkg import Mapper
@@ -13,10 +12,10 @@ class Json_Mapper(Mapper):
         super().__init__(files)
 
     def ingest_data(self, file):
-        logging.debug("Reading input file: %s", file.file_dir + file.filename)
+        self.logger.debug("Reading input file: %s", file.file_dir + file.filename)
         with open(file.file, "r") as input_json:
             in_data = json.load(input_json)
-            logging.debug("Data collected from file: %s", str(in_data))
+            self.logger.debug("Data collected from file: %s", str(in_data))
             file.data_dict = in_data
 
     def run_mapper(
@@ -28,6 +27,7 @@ class Json_Mapper(Mapper):
         output = []
         failed = []
         for file in self.files.json_files:
+            self.logger.debug("mapping file: %s", file.file)
             try:
                 self.ingest_data(file)
                 self.map_data(file)
@@ -35,6 +35,6 @@ class Json_Mapper(Mapper):
                 self.successful += 1
                 processed.append(file)
             except:
-                logging.error("failed to map file: %s", file.file)
+                self.logger.error("failed to map file: %s", file.file)
                 failed.append(file)
         return (mapper_files(processed), mapper_files(output), mapper_files(failed))

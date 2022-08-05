@@ -1,10 +1,13 @@
 # mapper_pkg/mapper_controller --
 # TODO: change move distutils is depricated
+from asyncio.log import logger
 from calendar import c
 from distutils.file_util import move_file
 import os
 from posixpath import dirname
 from sys import stdout
+import logging
+import sys
 
 from utils_pkg import directories, mapper_files
 
@@ -29,6 +32,25 @@ class Mapper_Controller:
         self.speechmatics_dir = speechmatics_dir
         self.transcribed_dir = transcribed_dir
         self.output_dir = output_dir
+        self.logger_config()
+
+
+    def logger_config(self):
+            self.log_file = os.path.join(
+                directories.log_dir, self.__module__.split(".")[-1]+ ".log"
+            )
+            if not os.path.isdir(os.path.dirname(self.log_file)):
+                os.mkdir(os.path.dirname(self.log_file))
+            if not os.path.isfile(self.log_file):
+                with open(self.log_file, "w") as outfile:
+                    outfile.close
+            self.file_handler = logging.FileHandler(
+                self.log_file, mode="a", encoding=None, delay=False
+            )
+            logger = logging.getLogger()
+            logger.addHandler(self.file_handler)
+            console_handler = logging.StreamHandler(sys.stdout)
+            console_handler.setLevel(logging.DEBUG)
 
     def submit_transcribed(self):
         for file in os.listdir(self.transcribed_dir):
@@ -39,9 +61,12 @@ class Mapper_Controller:
 
     def ingest_files(self):
         for root, d_names, f_names in os.walk(self.ingestion_dir):
+            logger.debug.debug('root: %s', root)
             for f in f_names:
                 f = os.path.join(root, f)
+                logger.debug.debug('ingest file: %s', f)
                 self.files.append(f)
+        logger.debug.debug('ingested files: %s', self.files)
         self.files = mapper_files(self.files)
 
     def map_files(self):
@@ -51,6 +76,7 @@ class Mapper_Controller:
         self.processed_files.append(xml_mapper.run_mapper())"""
         if len(self.files.json_files) > 0:
             # PLAN: exception handling on failure on mapping to continue upon failure
+            logger.debug.debug('starting json_mapper')
             json_mapper = Json_Mapper(self.files)
             json_processed, json_output, json_failed = json_mapper.run_mapper(
                 self.speechmatics_dir
@@ -58,6 +84,7 @@ class Mapper_Controller:
             self.processed_files = self.processed_files + json_processed.all_files
             self.output_files = self.output_files + json_output.all_files
             self.failed_files = self.failed_files + json_failed.all_files
+            logger.debug.info('processed_files: %s, output_files: %s failed_files: %s', self.processed_files, self.output_files, self.failed_files)
             # PLAN: add filename_mapper initator once Filename_Mapper is done
         """ if len(files.filename) > 0:
             filename_mapper = Filename_Mapper(files.filename)
