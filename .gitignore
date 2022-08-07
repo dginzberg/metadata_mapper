@@ -133,3 +133,4 @@ dmypy.json
 *input2/
 *.tar
 *environment/
+*speechmatics/

@@ -22,6 +22,7 @@ class TestXmlMapper:
     # TEST_TODO: test_datetime_formater
     def test_xml_datetime_formater(self):
         pytest.xfail(reason="not implemented")
+        
 
     # TEST_TODO: test run_mapper
     def test_xml_run_mapper(self):

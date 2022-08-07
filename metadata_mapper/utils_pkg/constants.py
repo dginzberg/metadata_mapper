@@ -13,9 +13,9 @@ class directories:
         #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220804"
         #"/catelas/shared/commsftp/Phase2/MIBG_IN/Paudium/20220805"
         #"/catelas/shared/commsftp/Phase2/Zoom/ZoomPhone/20220722"
-        #"/catelas/shared/commsftp/Phase2/Zoom/ZoomMeeting/20220719"
-    	#"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220607"
-	    "/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220609"
+        # "/catelas/shared/commsftp/Phase2/Zoom/ZoomMeeting/20220719"
+    	# "/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220607"
+	    # "/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220609"
 	    #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220610"
 	    #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220612"
 	    #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220613"
@@ -66,18 +66,24 @@ class directories:
         #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220802"
 	    #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220803"
 	    #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220805"
+        "/metadata_mapper/test_pkg/sample_data"
     )
     output_dir = os.path.abspath(
-        "/catelas/shared/test_output"
+        # "/catelas/shared/test_output"
+        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/test_output"
     )
     processed_dir = os.path.abspath(
-        "/catelas/shared/processed"
+        # "/catelas/shared/processed"
+        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/test_processed"
     )
     log_dir = os.path.abspath(
-        "/catelas/shared/scripts/metadata_mapper/metadata_mapper/logging"
+        # "metadata_mapper/logging"
+        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/metadata_mapper/logging"
     )
     speechmatics_dir = os.path.abspath("/home/ec2-user/transcribe/uat_input")
-    transcribed_dir = os.path.abspath("/home/ec2-user/transcribe/output")
+    transcribed_dir = os.path.abspath(
+        # "/home/ec2-user/transcribe/output"
+        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/transcribed")
 
 
 class data_info:

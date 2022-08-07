@@ -89,7 +89,7 @@ class Mapper_Controller:
                 self.failed_files = self.failed_files + json_failed.all_files
                 self.logger.info('successful: %d processed_files: %s, output_files: %s failed_files: %s', json_mapper.successful,  self.processed_files, self.output_files, self.failed_files)
             except:
-                logger.error("failed to run json mapper")
+                self.logger.error("failed to run json mapper")
            
             # PLAN: add filename_mapper initator once Filename_Mapper is done
         """ if len(files.filename) > 0:

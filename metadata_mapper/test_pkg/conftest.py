@@ -1,3 +1,4 @@
+from collections import OrderedDict
 from wsgiref.simple_server import software_version
 import pytest
 import datetime
@@ -242,10 +243,12 @@ def test_json_file(test_info):
     }
     out_dict = {
         "datetime": "2022-06-28T20:10:50.000000+0000",
-        "voice_file": "54644_20220628_1610_277_22680294_81700.wav",
+        "voice_file": os.path.abspath(
+            file_dir + os.sep + "54644_20220628_1610_277_22680294_81700.wav"
+        ),
         "to_email": "22680277",
         "from_email": "22680294",
-        "languages": ["en", "ms", "yue"],
+        "languages": ["en", "ms"],
     }
     return {
         "file": file,
@@ -273,128 +276,23 @@ def test_xml_file(test_info):
     file_dir = os.path.normpath("MBB_HK\\IPC\\20220520")
     software = "IPC"
     region = "MBB_HK"
+    date_data = "2022-08-04T14:26:46.500000+0000"
 
     data_dict = {
-        "recording": {
-            "segment": {
-                "complete": True,
-                "master": True,
-                "keepcontent": True,
-                "keepxml": True,
-                "rollbackrequired": False,
-                "rollbacktime": 15,
-                "compressiontype": 4,
-                "compressed": True,
-                "rollbackid": "51_00E0A708E36F_1140850690",
-                "contenttype": "audio/vnd.verint.wav",
-                "capturetype": "IP",
-                "starttime": "2022-05-20T19:41:07.336+08:00",
-                "readytoarchive": True,
-                "switch_id": 815000051,
-                "captureversion": "15.1.0.3441",
-                "tags": {
-                    "tag": [
-                        {"attribute": 0},
-                        {"attribute": "SIP/00E0A708E36F_1140850690/1649690459065"},
-                        {"attribute": 51},
-                        {"attribute": "MAYBANK DATA SOURCE 1"},
-                        {"attribute": -1},
-                        {"attribute": "00E0A708E36F_1140850690"},
-                        {"attribute": 815001006900077},
-                        {
-                            "attribute": [
-                                "Out",
-                                "00E0A708E36F",
-                                51,
-                                "00E0A708E36F_1140850690",
-                                "00E0A708E36F_1140850690",
-                                793,
-                                "Phoebe Wong",
-                                "Recorder",
-                                "Recorder",
-                                793,
-                                "Phoebe Wong",
-                            ]
-                        },
-                        {"attribute": 1},
-                        {"attribute": 1},
-                        {"attribute": "10.120.113.6:10092"},
-                        {"attribute": "10.120.113.14:16426"},
-                        {"attribute": "2022-05-20T19:41:07.336+08:00"},
-                        {"attribute": [0, 0]},
-                        {
-                            "attribute": [
-                                "Outbound",
-                                "3518 8793",
-                                1604739792788,
-                                0,
-                                93121997,
-                                "793H",
-                                93121997,
-                                793,
-                                793,
-                                "00E0A708E36F_1140850690",
-                                793,
-                                "Phoebe Wong",
-                                "00E0A708E36F",
-                            ]
-                        },
-                        {
-                            "attribute": [
-                                "Outbound",
-                                "3518 8793",
-                                1604739792788,
-                                0,
-                                93121997,
-                                "793H",
-                                93121997,
-                                793,
-                                793,
-                                "00E0A708E36F_1140850690",
-                                793,
-                                "Phoebe Wong",
-                                "00E0A708E36F",
-                            ]
-                        },
-                        {"attribute": 54375},
-                        {"attribute": "2022-05-20T19:42:06.728+08:00"},
-                        {"attribute": "SilenceDetection"},
-                    ]
-                },
-                "systemtype": "trading",
-                "shared_key": "audio_51_00e0a708e36f_1140850690",
-                "duration": 54,
-                "streams": {
-                    "stream": {
-                        "audiodurationinms": 53240,
-                        "dstip": "10.120.113.6:10092",
-                        "expectedpacketcount": 2590,
-                        "firstpackettime": "2022-05-20T19:41:07.336+08:00",
-                        "lastpackettime": "2022-05-20T19:42:01.723+08:00",
-                        "missedrtppackets": 0,
-                        "rtptype": "PCMU",
-                        "silencedurationinms": 1180,
-                        "srcip": "10.120.113.14:16426",
-                        "ssrcid": 1318837296,
-                        "totalrtppackets": 2662,
-                    }
-                },
-            },
-            "contacts": {
-                "contact": {
-                    "sessions": {
-                        "session": {
-                            "complete": True,
-                            "interactiontype": "Phone",
-                            "mark": True,
-                            "inums": {"inum": 815001006900078},
-                            "switch_id": 815000051,
-                        }
-                    },
-                    "complete": True,
-                }
-            },
-        }
+        "CAudioFile.@xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+        "CAudioFile.@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "CAudioFile.CRI.StartTime": "2022-08-04T14:26:46.5000000+0000",
+        "CAudioFile.CRI.Duration": "2",
+        "CAudioFile.CRI.Direction": "0",
+        "CAudioFile.CRI.AgentPBXID": "33049",
+        "CAudioFile.CRI.AgentID": "0",
+        "CAudioFile.CRI.PrivateData.PrivateData.DictionaryEntry.Key": "CD16",
+        "CAudioFile.CRI.PrivateData.PrivateData.DictionaryEntry.Value": "8778510_318",
+        "CAudioFile.CRI.Channel": "1913",
+        "CAudioFile.CRI.Unit": "1000",
+        "CAudioFile.CRI.SID": "8778510",
+        "CAudioFile.CRI.DBS_ID": "318",
+        "CAudioFile.CRI.ScreenUnit": "0",
     }
     return {
         "file": file,
@@ -405,6 +303,7 @@ def test_xml_file(test_info):
         "software": software,
         "region": region,
         "data_dict": data_dict,
+        "date_data" : date_data
     }
 
 
