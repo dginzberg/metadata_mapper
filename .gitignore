@@ -129,4 +129,6 @@ dmypy.json
 .pyre/
 
 .commsftp
-.catelas
+.logging/*
+*input2/
+*.tar
