@@ -9,7 +9,7 @@ import os
 
 class directories:
     ingestion_dir = os.path.abspath(
-    #    "/catelas/shared/commsftp/Phase2/MIBG_ID/Cisco/20220801"
+        #"/catelas/shared/commsftp/Phase2/MIBG_ID/Cisco/20220801"
         #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220804"
         #"/catelas/shared/commsftp/Phase2/MIBG_IN/Paudium/20220805"
         #"/catelas/shared/commsftp/Phase2/Zoom/ZoomPhone/20220722"
@@ -63,7 +63,7 @@ class directories:
 	    #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220730"
 	    #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220731"
 	    #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220801"
-    #	"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220802"
+        #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220802"
 	    #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220803"
 	    #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220805"
     )

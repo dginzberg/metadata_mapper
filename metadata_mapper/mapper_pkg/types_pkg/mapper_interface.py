@@ -123,7 +123,7 @@ class Mapper(metaclass=ABCMeta):
             return self.get_label_data(file, label)
 
     def get_audio_label_data(self, file, label):
-        return os.path.abspath(file.file_dir + "/" + file.data_dict.get(labels.label_ref.get(file.software).get(label)))
+        return os.path.abspath(file.file_dir + os.sep + file.data_dict.get(labels.label_ref.get(file.software).get(label)))
 
     def map_data(self, file):
         out_dict = {}
