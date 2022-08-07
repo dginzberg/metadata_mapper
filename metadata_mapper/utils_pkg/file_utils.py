@@ -34,6 +34,9 @@ class mapper_file:
                 self.file_dir = os.path.dirname(
                     (file.split(directories.ingestion_dir.split(os.sep)[-1]))[1]
                 ).strip(os.sep)
+                if self.file_dir == "":
+                    self.file_dir = os.path.dirname(file)
+
         except:
             self.file_dir = os.path.dirname(file)
             # self.file_dir = os.path.dirname(file.split())

@@ -122,6 +122,9 @@ class Mapper(metaclass=ABCMeta):
         else:
             return self.get_label_data(file, label)
 
+    def get_audio_label_data(self, file, label):
+        return os.path.abspath(file.file_dir + os.sep + file.data_dict.get(labels.label_ref.get(file.software).get(label)))
+
     def map_data(self, file):
         out_dict = {}
         for label in labels.out_label_ref:
@@ -134,6 +137,9 @@ class Mapper(metaclass=ABCMeta):
             # email
             elif label == labels.out_label_ref[2] or label == labels.out_label_ref[3]:
                 out_dict[label] = self.get_email_label_data(file, label)
+            #audio
+            elif label == labels.out_label_ref[1]:
+                out_dict[label] = self.get_audio_label_data(file, label)
             else:
                 out_dict[label] = self.get_label_data(file, label)
         file.data_dict = out_dict
