@@ -133,3 +133,7 @@ dmypy.json
 *.tar
 *environment/
 *speechmatics/
+
+run.sh
+setup.py
+metadata_mapper/utils_pkg/constants.py

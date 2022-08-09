@@ -17,6 +17,7 @@ import pytz
 class Mapper(metaclass=ABCMeta):
     def __init__(self, files):
         self.start_time = time.time()
+        self.logger_config()
         self.files = files
         self.successful = 0
 
