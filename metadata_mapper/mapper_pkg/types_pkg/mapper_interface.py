@@ -17,7 +17,6 @@ import pytz
 class Mapper(metaclass=ABCMeta):
     def __init__(self, files):
         self.start_time = time.time()
-        self.logger_config()
         self.files = files
         self.successful = 0
 
@@ -35,7 +34,7 @@ class Mapper(metaclass=ABCMeta):
         )
         self.logger = logging.getLogger()
         self.logger.addHandler(self.file_handler)
-        self.logger.setLevel(logging.DEBUG)
+        self.logger.setLevel(logging.INFO)
 
     def final_logging(self):
         self.finish_time = time.time() - self.start_time
@@ -143,6 +142,8 @@ class Mapper(metaclass=ABCMeta):
                 out_dict[label] = self.get_audio_label_data(file, label)
             else:
                 out_dict[label] = self.get_label_data(file, label)
+        self.logger.info("mapped labels")
+        self.logger.debug(out_dict)
         file.data_dict = out_dict
 
     @abstractmethod

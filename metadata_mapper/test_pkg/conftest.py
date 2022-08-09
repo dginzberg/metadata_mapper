@@ -236,7 +236,7 @@ def test_json_file(test_info):
     file_dir = os.path.join('MIBG_HK', 'HKT', '20220712')
     software = 'HKT'
     region = 'MIBG_HK'
-    date_data = '2022-06-28T16:10:50.000000+0000'
+    date_data = '2022-06-28T20:10:50.000000+0000'
     data_dict = {
         'From_Phone_Number': '22680294',
         'To_Phone_Number': '22680277',
@@ -247,7 +247,7 @@ def test_json_file(test_info):
         'Direction': 'Outbound',
     }
     out_dict = {
-        'datetime': '2022-06-28T16:10:50.000000+0000',
+        'datetime': '2022-06-28T20:10:50.000000+0000',
         'voice_file': os.path.abspath(os.path.join(
             file_dir , '54644_20220628_1610_277_22680294_81700.wav'
         )),
