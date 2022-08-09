@@ -79,10 +79,11 @@ class Mapper_Controller:
                 xml_processed, xml_output, xml_failed = xml_mapper.run_mapper(
                     self.speechmatics_dir
                 )
+                self.successful = self.successful + xml_mapper.successful
                 self.processed_files = self.processed_files + xml_processed.all_files
                 self.output_files = self.output_files + xml_output.all_files
                 self.failed_files = self.failed_files + xml_failed.all_files
-                self.logger.info('successful XML: %d processed_xml_files: %s, output_xml_files: %s failed_xml_files: %s', xml_mapper.successful,  self.processed_files, self.output_files, self.failed_files)
+                self.logger.info('successful XML: %d processed_xml_files: %s, output_xml_files: %s failed_xml_files: %s', xml_mapper.successful,  self.xml_processed, self.xml_output, self.xml_failed)
             except:
                 self.logger.error("failed to run xml mapper")
         if len(self.files.json_files) > 0:
@@ -92,26 +93,29 @@ class Mapper_Controller:
                 json_processed, json_output, json_failed = json_mapper.run_mapper(
                     self.speechmatics_dir
                 )
+                self.successful = self.successful + json_mapper.successful
                 self.processed_files = self.processed_files + json_processed.all_files
                 self.output_files = self.output_files + json_output.all_files
                 self.failed_files = self.failed_files + json_failed.all_files
-                self.logger.info('successful JSON: %d processed_json_files: %s, output_json_files: %s failed_json_files: %s', json_mapper.successful,  self.processed_files, self.output_files, self.failed_files)
+                self.logger.info('successful JSON: %d processed_json_files: %s, output_json_files: %s failed_json_files: %s', json_mapper.successful,  self.json_processed, self.json_output, self.json_failed)
             except:
                 self.logger.error("failed to run json mapper")
            
-        # if len(self.files.filename_files) > 0:
-        #     self.logger.debug('starting filename_mapper')
-        #     try:
-        #         filename_mapper = Filename_Mapper(self.files)
-        #         filename_processed, filename_output, filename_failed = filename_mapper.run_mapper(
-        #             self.speechmatics_dir
-        #         )
-        #         self.processed_files = self.processed_files + filename_processed.all_files
-        #         self.output_files = self.output_files + filename_output.all_files
-        #         self.failed_files = self.failed_files + filename_failed.all_files
-        #         self.logger.info('successful Filename: %d processed_filename_files: %s, output_filename_files: %s failed_filename_files: %s', filename_mapper.successful,  self.processed_files, self.output_files, self.failed_files)
-        #     except:
-        #         self.logger.error("failed to run filename mapper")
+        if len(self.files.filename_files) > 0:
+            self.logger.debug('starting filename_mapper')
+            try:
+                filename_mapper = Filename_Mapper(self.files)
+                filename_processed, filename_output, filename_failed = filename_mapper.run_mapper(
+                    self.speechmatics_dir
+                )
+                self.successful = self.successful + filename_mapper.successful
+                self.processed_files = self.processed_files + filename_processed.all_files
+                self.output_files = self.output_files + filename_output.all_files
+                self.failed_files = self.failed_files + filename_failed.all_files
+                self.logger.info('successful Filename: %d processed_filename_files: %s, output_filename_files: %s failed_filename_files: %s', filename_mapper.successful,  self.filename_processed, self.filename_output, self.filename_failed)
+            except:
+                self.logger.error("failed to run filename mapper")
+            self.logger.info('successful Total: %d processed_files: %s, output_files: %s failed_files: %s', self.successful,  self.processed_files, self.output_files, self.failed_files)
 
     def mv_processed(self):
         for file in self.processed_files:
