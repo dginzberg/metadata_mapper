@@ -7,9 +7,12 @@ from utils_pkg import mapper_file, mapper_files, directories
 from mapper_pkg.types_pkg import json_mapper, xml_mapper, filename_mapper
 from mapper_pkg import Mapper_Controller, Xml_Mapper
 
+from metadata_mapper.mapper_pkg.types_pkg.filename_mapper import Filename_Mapper
+
 
 @pytest.fixture(autouse=True, scope="session")
 def test_info():
+    date_time_format = "%Y-%m-%dT%H:%M:%S.%f%z"
     curr_date = datetime.date.strftime(datetime.date.today(), "%Y%m%d")
     y_date = datetime.date.strftime(
         datetime.date.today() - datetime.timedelta(1), "%Y%m%d"
@@ -33,7 +36,9 @@ def test_info():
     output_dir = os.path.normpath("metadata_mapper\\test_pkg\\output")
     temp_dir = os.path.normpath("metadata_mapper\\test_pkg\\temp")
 
+
     return {
+        "date_time_format": date_time_format,
         "curr_date": curr_date,
         "y_date": y_date,
         "audio": audio,
@@ -43,6 +48,7 @@ def test_info():
         "filename": filename,
         "type": type,
         "software": software,
+        "out_label_ref":out_label_ref,
         "ingestion_dir": ingestion_dir,
         "speechmatics_dir": speechmatics_dir,
         "processed_dir": processed_dir,
@@ -59,12 +65,14 @@ def test_datetime_format():
     Paudium = (["20220623", "125102"], ["%Y%m%d", "%f"])
     ZoomMeeting = (["2022-06-08T13:18:49.0330156+08:00"], ["%Y-%m-%dT%H:%M:%S.%f+%z"])
     ZoomPhone = (["2022-06-08T13:18:42.6411264+08:00"], ["%Y-%m-%dT%H:%M:%S.%f+%z"])
+    IPC = (["2022-08-04T14:26:46.5000000+0000"], ["%Y-%m-%dT%H:%M:%S.%f+%z"])
     return {
         "HKT": HKT,
         "Cisco": Cisco,
         "Paudium": Paudium,
         "ZoomMeeting": ZoomMeeting,
         "ZoomPhone": ZoomPhone,
+        "IPC": IPC
     }
 
 
@@ -213,7 +221,8 @@ def test_files(test_info):
     return {
         "mix_mapper_files": mix_mapper_files,
         "json_mapper_files": json_mapper_files,
-        "json_output": json_output,
+        #TODO:
+        # "json_output": json_output,
         "xml_mapper_files": xml_mapper_files,
         "filename_mapper_files": filename_mapper_files,
     }
@@ -278,21 +287,62 @@ def test_xml_file(test_info):
     region = "MBB_HK"
     date_data = "2022-08-04T14:26:46.500000+0000"
 
-    data_dict = {
-        "CAudioFile.@xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
-        "CAudioFile.@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-        "CAudioFile.CRI.StartTime": "2022-08-04T14:26:46.5000000+0000",
-        "CAudioFile.CRI.Duration": "2",
-        "CAudioFile.CRI.Direction": "0",
-        "CAudioFile.CRI.AgentPBXID": "33049",
-        "CAudioFile.CRI.AgentID": "0",
-        "CAudioFile.CRI.PrivateData.PrivateData.DictionaryEntry.Key": "CD16",
-        "CAudioFile.CRI.PrivateData.PrivateData.DictionaryEntry.Value": "8778510_318",
-        "CAudioFile.CRI.Channel": "1913",
-        "CAudioFile.CRI.Unit": "1000",
-        "CAudioFile.CRI.SID": "8778510",
-        "CAudioFile.CRI.DBS_ID": "318",
-        "CAudioFile.CRI.ScreenUnit": "0",
+    data_dict = OrderedDict(
+        [
+            ("CAudioFile.@xmlns:xsd", "http://www.w3.org/2001/XMLSchema"),
+            ("CAudioFile.@xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance"),
+            ("CAudioFile.CRI.StartTime", "2022-08-04T14:26:46.5000000+0000"),
+            ("CAudioFile.CRI.Duration", "2"),
+            ("CAudioFile.CRI.Direction", "0"),
+            ("CAudioFile.CRI.AgentPBXID", "33049"),
+            ("CAudioFile.CRI.AgentID", "0"),
+            ("CAudioFile.CRI.PrivateData.PrivateData.DictionaryEntry.Key", "CD16"),
+            ("CAudioFile.CRI.PrivateData.PrivateData.DictionaryEntry.Value",
+                "8778510_318"),
+            ("CAudioFile.CRI.Channel", "1913"),
+            ("CAudioFile.CRI.Unit", "1000"),
+            ("CAudioFile.CRI.SID", "8778510"),
+            ("CAudioFile.CRI.DBS_ID", "318"),
+            ("CAudioFile.CRI.ScreenUnit", "0"),
+            ("CAudioFile.CRI.NumberOfHolds", "0"),
+            ("CAudioFile.CRI.NumberOfConferences", "0"),
+            ("CAudioFile.CRI.NumberOfTransfers", "0"),
+            ("CAudioFile.CRI.TotalHoldTime", "0"),
+            ("CAudioFile.CRI.LocalStartTime", "2022-08-04T22:26:46.5000000+0800"),
+            ("CAudioFile.CRI.LocalEndTime", "2022-08-04T22:26:48.5000000+0800"),
+            ("CAudioFile.CRI.ContactID", "9145781785270000008"),
+            ("CAudioFile.CRI.WrapUpTime", "0"),
+            ("CAudioFile.CRI.SwitchCallID", "SIP/AUDIO/00E0A707F66C_3/1658591"),
+            ("CAudioFile.CRI.DataSourceName", "Zone 1"),
+            ("CAudioFile.CRI.IsException", "1"),
+            ("CAudioFile.CRI.ExceptionReason", "1"),
+            ("CAudioFile.CRI.Extension", "33049 Channel 3"),
+            ("CAudioFile.CRI.OriginalContactId", "9204604776060000012"),
+            ("CAudioFile.CRI.TurretID", "33049"),
+            ("CAudioFile.CRI.TurretName", "00E0A707F66C"),
+            ("CAudioFile.CRI.RecordingReference", "00E0A707F66C_3"),
+            ("CAudioFile.Agent.GroupsList", None),
+            ("CAudioFile.Agent.Name", "Wei Yang,KL_FICC"),
+            ("CAudioFile.Agent.Organization", "MY Traders"),
+            ("CAudioFile.File.Location",
+                "http://localhost/WSAAudio/Verints;15_20220805_194701/WAV/54644_20220628_1610_277_22680294_81700.wav"),
+            ("CAudioFile.File.RawLocation",
+                "E:\\Upload\\IPC\\Verints;15_20220805_194701\\WAV\\54644_20220628_1610_277_22680294_81700.wav"
+            ),
+            ("CAudioFile.File.RawLocationType", "File"),
+            ("CAudioFile.Instances.CInstance.Id", "1"),
+            ("CAudioFile.Instances.CInstance.Name", "CI-Analytics Instance 1"),
+            ("CAudioFile.XmlVersion", "10.0.0.0"),
+        ]
+    )
+    out_dict = {
+        "datetime": "2022-08-04T14:26:46.500000+0000",
+        "voice_file": os.path.abspath(
+            file_dir + os.sep + "54644_20220628_1610_277_22680294_81700.wav"
+        ),
+        "to_email": "33049",
+        "from_email": "8778510",
+        "languages": ["en"],
     }
     return {
         "file": file,
@@ -302,8 +352,9 @@ def test_xml_file(test_info):
         "file_dir": file_dir,
         "software": software,
         "region": region,
+        "date_data": date_data,
+        "out_dict": out_dict,
         "data_dict": data_dict,
-        "date_data" : date_data
     }
 
 
@@ -345,3 +396,9 @@ def init_xml_mapper(request, test_files):
     xml_mapper = Xml_Mapper(test_files.get("xml_mapper_files"))
 
     request.cls.xml_mapper = xml_mapper
+
+@pytest.fixture(scope="class")
+def init_filename_mapper(request, test_files):
+    filename_mapper = Filename_Mapper(test_files.get("filename_mapper_files"))
+
+    request.cls.filename_mapper = filename_mapper

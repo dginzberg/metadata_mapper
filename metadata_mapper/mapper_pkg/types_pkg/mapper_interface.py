@@ -97,7 +97,7 @@ class Mapper(metaclass=ABCMeta):
     def write_json(self, file, speechmatics_dir=directories.speechmatics_dir):
         if not os.path.isdir(speechmatics_dir):
             os.makedirs(speechmatics_dir)
-        out_file = os.path.join(speechmatics_dir, file.filename)
+        out_file = os.path.join(speechmatics_dir, file.filename.split('.')[0]+'.json')
 
         with open(out_file, "w") as outfile:
             self.logger.debug("Writing output file: %s", out_file)
@@ -107,8 +107,7 @@ class Mapper(metaclass=ABCMeta):
     def get_label_data(self, file, label):
         return file.data_dict.get(labels.label_ref.get(file.software).get(label))
 
-    def get_date_label_data(self, file):
-        label = labels.out_label_ref[0]
+    def get_date_label_data(self, file, label):
         date_labels = labels.label_ref.get(file.software).get(label)
         out_data = []
         for date_label in date_labels[0]:
@@ -123,14 +122,16 @@ class Mapper(metaclass=ABCMeta):
             return self.get_label_data(file, label)
 
     def get_audio_label_data(self, file, label):
-        return os.path.abspath(file.file_dir + os.sep + file.data_dict.get(labels.label_ref.get(file.software).get(label)))
+        if file.software == data_info.software[0]:
+           return os.path.abspath(file.file_dir + os.sep + self.get_label_data(file, label).split('WAV')[1])
+        return os.path.abspath(file.file_dir + os.sep + self.get_label_data(file, label))
 
     def map_data(self, file):
         out_dict = {}
         for label in labels.out_label_ref:
             # datetime
             if label == labels.out_label_ref[0]:
-                out_dict[label] = self.get_date_label_data(file)
+                out_dict[label] = self.get_date_label_data(file, label)
             # language
             elif label == labels.out_label_ref[4]:
                 out_dict[label] = file.languages

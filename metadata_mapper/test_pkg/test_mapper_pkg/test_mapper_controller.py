@@ -18,11 +18,11 @@ class TestMapperController:
             os.remove(os.path.join(test_info.get("speechmatics_dir"), file))
         result = self.controller.map_files()
         assert len(self.controller.failed_files) == 0
-        assert len(self.controller.processed_files) == 8
-        assert len(self.controller.output_files) == 8
+        assert len(self.controller.processed_files) == 10
+        assert len(self.controller.output_files) == 10
 
         for file in self.controller.processed_files:
-            out_file = os.path.join(test_info.get("speechmatics_dir"), file.filename)
+            out_file = os.path.join(test_info.get("speechmatics_dir"), file.filename.split('.')[0]+'.json')
             assert os.path.isfile(out_file)
 
     def test_processed(self, test_files, test_info):

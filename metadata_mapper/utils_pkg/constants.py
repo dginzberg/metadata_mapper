@@ -178,7 +178,7 @@ class labels:
             "from_email": "callerNumber",
         },
         "IPC": {
-            'datetime': (['LocalStartTime'],["%Y-%m-%dT%H:%M:%S.%f%Z"]) ,
+            'datetime': (['CAudioFile.CRI.StartTime'],["%Y-%m-%dT%H:%M:%S.%f%Z"]) ,
             'voice_file': 'CAudioFile.File.Location',
             'to_email': 'CAudioFile.CRI.AgentPBXID',
             'from_email': 'CAudioFile.CRI.SID'

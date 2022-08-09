@@ -7,7 +7,7 @@ import os
 import glob
 import sys
 from pathlib import Path
-from utils_pkg import data_info, mapper_files
+from utils_pkg import data_info, mapper_files, directories
 from mapper_pkg.types_pkg import Json_Mapper
 
 
@@ -16,12 +16,35 @@ class Xml_Mapper(Json_Mapper):
         super().__init__(files)
         self.files = files
 
-    def run_mapper(self):
-        for file in self.files:
-            in_dict = self.ingest_data(file)
-            out_dict = super().map_data(in_dict, file.software)
-            out_file = super().write_json(out_dict, file)
-            super().super().successful += 1
+    def run_mapper(self, speechmatics_dir = directories.speechmatics_dir):
+        self.logger_config()
+        processed = []
+        output = []
+        failed = []
+        for file in self.files.xml_files:
+            self.logger.debug("mapping file: %s", file.file)
+            try:
+                self.ingest_data(file)
+            except:
+                self.logger.error("failed to ingest data from file: %s", file.file)
+                failed.append(file)
+                continue
+            try:
+                self.map_data(file)
+            except:
+                self.logger.error("failed to map file: %s, with data: %s", file.file, file.data_dict)
+                failed.append(file)
+                continue
+            try:
+                output.append(self.write_json(file, speechmatics_dir).name)
+            except:
+                self.logger.error("failed to write json: %s", file.file)
+                failed.append(file)
+                continue
+            
+            self.successful += 1
+            processed.append(file)
+        return (mapper_files(processed), mapper_files(output), mapper_files(failed))
 
     def flatten_dict(self, d):
         def items():

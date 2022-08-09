@@ -54,7 +54,7 @@ class Mapper_Controller:
         for file in os.listdir(self.transcribed_dir):
             os.rename(
                 os.path.join(self.transcribed_dir, file),
-                os.path.join(self.output_dir, file),
+                os.path.join(self.output_dir, file.file_dir,  file.filename),
             )
 
     def ingest_files(self):
@@ -66,18 +66,26 @@ class Mapper_Controller:
                     self.logger.debug('ingest file: %s', f)
                     self.files.append(f)
                 except:
-                    logger.error("failed to ingest file: %s", f)
+                    self.logger.error("failed to ingest file: %s", f)
         self.logger.debug('ingested files: %s', self.files)
         self.files = mapper_files(self.files)
         
 
     def map_files(self):
-        # PLAN: add xml_mapper initator once XML_Mapper is done
-        """if len(files.xml) > 0:
-        xml_mapper = Xml_Mapperles.xml)
-        self.processed_files.append(xml_mapper.run_mapper())"""
+        if len(self.files.xml_files) > 0:
+            self.logger.debug('starting xml_mapper')
+            try:
+                xml_mapper = Xml_Mapper(self.files)
+                xml_processed, xml_output, xml_failed = xml_mapper.run_mapper(
+                    self.speechmatics_dir
+                )
+                self.processed_files = self.processed_files + xml_processed.all_files
+                self.output_files = self.output_files + xml_output.all_files
+                self.failed_files = self.failed_files + xml_failed.all_files
+                self.logger.info('successful XML: %d processed_xml_files: %s, output_xml_files: %s failed_xml_files: %s', xml_mapper.successful,  self.processed_files, self.output_files, self.failed_files)
+            except:
+                self.logger.error("failed to run xml mapper")
         if len(self.files.json_files) > 0:
-            # PLAN: exception handling on failure on mapping to continue upon failure
             self.logger.debug('starting json_mapper')
             try:
                 json_mapper = Json_Mapper(self.files)
@@ -87,14 +95,23 @@ class Mapper_Controller:
                 self.processed_files = self.processed_files + json_processed.all_files
                 self.output_files = self.output_files + json_output.all_files
                 self.failed_files = self.failed_files + json_failed.all_files
-                self.logger.info('successful: %d processed_files: %s, output_files: %s failed_files: %s', json_mapper.successful,  self.processed_files, self.output_files, self.failed_files)
+                self.logger.info('successful JSON: %d processed_json_files: %s, output_json_files: %s failed_json_files: %s', json_mapper.successful,  self.processed_files, self.output_files, self.failed_files)
             except:
                 self.logger.error("failed to run json mapper")
            
-            # PLAN: add filename_mapper initator once Filename_Mapper is done
-        """ if len(files.filename) > 0:
-            filename_mapper = Filename_Mapper(files.filename)
-            self.processed_files.append( filename_mapper.run_mapper()) """
+        # if len(self.files.filename_files) > 0:
+        #     self.logger.debug('starting filename_mapper')
+        #     try:
+        #         filename_mapper = Filename_Mapper(self.files)
+        #         filename_processed, filename_output, filename_failed = filename_mapper.run_mapper(
+        #             self.speechmatics_dir
+        #         )
+        #         self.processed_files = self.processed_files + filename_processed.all_files
+        #         self.output_files = self.output_files + filename_output.all_files
+        #         self.failed_files = self.failed_files + filename_failed.all_files
+        #         self.logger.info('successful Filename: %d processed_filename_files: %s, output_filename_files: %s failed_filename_files: %s', filename_mapper.successful,  self.processed_files, self.output_files, self.failed_files)
+        #     except:
+        #         self.logger.error("failed to run filename mapper")
 
     def mv_processed(self):
         for file in self.processed_files:
@@ -104,6 +121,7 @@ class Mapper_Controller:
             os.rename(file.file, os.path.join(move_dir, file.filename))
 
     def start_mapping(self):
+        # self.submit_transcribed()
         self.ingest_files()
         self.map_files()
         # self.mv_processed()

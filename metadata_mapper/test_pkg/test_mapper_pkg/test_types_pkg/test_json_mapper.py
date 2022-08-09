@@ -17,14 +17,14 @@ class TestJsonMapper:
         assert mapper.successful == 0
         assert os.path.exists(mapper.log_file) and os.path.isfile(mapper.log_file)
 
-    def test_json_datetime_formater(self, test_files, test_datetime_format):
+    def test_json_datetime_formater(self, test_files, test_datetime_format, test_info):
         mapper = Json_Mapper(test_files["json_mapper_files"])
         for file in mapper.files.all_files:
             format = test_datetime_format.get(file.software)
 
             date_time = mapper.datetime_formatter(format)
 
-            datetime.strptime(date_time, data_info.date_time_format)
+            datetime.strptime(date_time, test_info.get("date_time_format"))
 
     def test_json_ingest_data(self, test_json_file):
         mapper = Json_Mapper()
@@ -36,12 +36,12 @@ class TestJsonMapper:
         for key in test_json_file.get("data_dict").keys():
             assert file.data_dict.get(key) == test_json_file.get("data_dict").get(key)
 
-    def test_get_date_labels(self, test_json_file):
+    def test_get_date_labels(self, test_json_file, test_info):
         mapper = Json_Mapper()
         file = test_json_file.get("mapper_file")
         file.set_data_dict(test_json_file.get("data_dict"))
 
-        date_data = mapper.get_date_label_data(file)
+        date_data = mapper.get_date_label_data(file, test_info.get("out_label_ref")[0])
 
         assert date_data == test_json_file.get("date_data")
 
@@ -55,7 +55,6 @@ class TestJsonMapper:
         assert test_json_file.get("out_dict") == file.data_dict
 
     def test_json_write_json(self, test_info, test_json_file):
-        directories.speechmatics_dir = test_info.get("speechmatics_dir")
         mapper = Json_Mapper()
         file = test_json_file.get("mapper_file")
         file.data_dict = test_json_file.get("out_dict")
