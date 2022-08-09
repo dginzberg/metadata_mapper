@@ -130,7 +130,6 @@ dmypy.json
 
 .commsftp
 .logging/*
-*input2/
 *.tar
 *environment/
 *speechmatics/

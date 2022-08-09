@@ -1,4 +1,5 @@
 #! /user/bin/env python
+from glob import glob
 from importlib_metadata import entry_points
 from setuptools import find_namespace_packages, setup, find_packages
 from os.path import join, dirname
