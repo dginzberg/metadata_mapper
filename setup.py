@@ -34,10 +34,10 @@ setup(
             "metadata_mapper = mapper_pkg.__main__:run",
         ],
     },
-    # ENV
-    # data_files= [
-    #     ('target_directory_1', glob('catelas/shared/commsftp/Phase2/*')),
-    #     ],
-    # include_package_data=True,
+    ENV
+    data_files= [
+        ('target_directory_1', glob('catelas/shared/commsftp/Phase2/*')),
+        ],
+    include_package_data=True,
     # ...
 )
