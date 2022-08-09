@@ -27,14 +27,14 @@ def test_info():
     out_label_ref = ["datetime", "voice_file", "to_email", "from_email", "languages"]
     #  PLAN: Add other software types
     #  'IPC', 'ARC', 'Transonic', 'Voicesoft']
-    ingestion_dir = os.path.abspath("metadata_mapper/test_pkg/sample_data")
-    speechmatics_dir = os.path.abspath(
-        "metadata_mapper/test_pkg/speechmatics/input"
+    ingestion_dir = os.path.normpath("metadata_mapper\\test_pkg\\sample_data")
+    speechmatics_dir = os.path.normpath(
+        "metadata_mapper\\test_pkg\\speechmatics\\input"
     )
-    processed_dir = os.path.abspath("metadata_mapper/test_pkg/test_processed")
-    transcribed_dir = os.path.abspath("metadata_mapper/test_pkg/test_transcribed")
-    output_dir = os.path.abspath("metadata_mapper/test_pkg/test_output")
-    temp_dir = os.path.abspath("metadata_mapper/test_pkg/sample_data_backup")
+    processed_dir = os.path.normpath("metadata_mapper\\test_pkg\\test_processed")
+    transcribed_dir = os.path.normpath("metadata_mapper\\test_pkg\\test_transcribed")
+    output_dir = os.path.normpath("metadata_mapper\\test_pkg\\test_output")
+    temp_dir = os.path.normpath("metadata_mapper\\test_pkg\\sample_data_backup")
 
 
     return {
@@ -237,7 +237,7 @@ def test_json_file(test_info):
     map_file = mapper_file(file)
     filetype = ".json"
     filename = "54644_20220628_1610_277_22680294_81700.json"
-    file_dir = os.path.abspath("MIBG_HK\\HKT\\20220712")
+    file_dir = os.path.normpath("MIBG_HK\\HKT\\20220712")
     software = "HKT"
     region = "MIBG_HK"
     date_data = "2022-06-28T20:10:50.000000+0000"
@@ -282,7 +282,7 @@ def test_xml_file(test_info):
     map_file = mapper_file(file)
     filetype = ".xml"
     filename = "815001006900078.xml"
-    file_dir = os.path.abspath("MBB_HK\\IPC\\20220520")
+    file_dir = os.path.normpath("MBB_HK\\IPC\\20220520")
     software = "IPC"
     region = "MBB_HK"
     date_data = "2022-08-04T14:26:46.500000+0000"
@@ -367,7 +367,7 @@ def test_audio_file(test_info):
     map_file = mapper_file(file)
     filetype = ".wav"
     filename = "IN-20220712_084848_DEV10003092_CH05.wav"
-    file_dir = os.path.abspath("MBB_VN\\Hanoi\\ARC\\20220713")
+    file_dir = os.path.normpath("MBB_VN\\Hanoi\\ARC\\20220713")
     software = "ARC"
     region = "MBB_VN\\Hanoi"
     return {

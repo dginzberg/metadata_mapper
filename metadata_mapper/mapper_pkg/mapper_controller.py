@@ -31,6 +31,7 @@ class Mapper_Controller:
         self.speechmatics_dir = speechmatics_dir
         self.transcribed_dir = transcribed_dir
         self.output_dir = output_dir
+        self.successful = 0
         self.logger_config()
 
 
