@@ -1,4 +1,5 @@
 #! /user/bin/env python
+from glob import glob
 from importlib_metadata import entry_points
 from setuptools import find_namespace_packages, setup, find_packages
 from os.path import join, dirname
@@ -34,7 +35,7 @@ setup(
             "metadata_mapper = mapper_pkg.__main__:run",
         ],
     },
-    ENV
+    # ENV
     data_files= [
         ('target_directory_1', glob('catelas/shared/commsftp/Phase2/*')),
         ],

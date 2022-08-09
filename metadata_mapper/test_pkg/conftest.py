@@ -29,7 +29,7 @@ def test_info():
     #  'IPC', 'ARC', 'Transonic', 'Voicesoft']
     ingestion_dir = os.path.abspath("metadata_mapper/test_pkg/sample_data")
     speechmatics_dir = os.path.abspath(
-        "metadata_mapper/metadata_mapper/test_pkg/speechmatics/input"
+        "metadata_mapper/test_pkg/speechmatics/input"
     )
     processed_dir = os.path.abspath("metadata_mapper/test_pkg/test_processed")
     transcribed_dir = os.path.abspath("metadata_mapper/test_pkg/test_transcribed")
