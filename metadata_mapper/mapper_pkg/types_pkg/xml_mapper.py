@@ -16,7 +16,7 @@ class Xml_Mapper(Json_Mapper):
         super().__init__(files)
         self.files = files
 
-    def run_mapper(self, speechmatics_dir = directories.speechmatics_dir):
+    def run_mapper(self, speechmatics_in_dir = directories.speechmatics_in_dir):
         self.logger_config()
         processed = []
         output = []
@@ -36,7 +36,7 @@ class Xml_Mapper(Json_Mapper):
                 failed.append(file)
                 continue
             try:
-                output.append(self.write_json(file, speechmatics_dir).name)
+                output.append(self.write_json(file, speechmatics_in_dir).name)
             except:
                 self.logger.error("failed to write json: %s", file.file)
                 failed.append(file)

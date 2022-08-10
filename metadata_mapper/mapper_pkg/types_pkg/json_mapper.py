@@ -22,7 +22,7 @@ class Json_Mapper(Mapper):
 
     def run_mapper(
         self,
-        speechmatics_dir=directories.speechmatics_dir,
+        speechmatics_in_dir=directories.speechmatics_in_dir,
     ):
         self.logger_config()
         processed = []
@@ -46,7 +46,7 @@ class Json_Mapper(Mapper):
                 failed.append(file)
                 continue
             try:
-                output_file = self.write_json(file, speechmatics_dir).name
+                output_file = self.write_json(file, speechmatics_in_dir).name
                 self.logger.debug("writing output")
                 self.logger.debug(output_file )
                 output.append(output_file)

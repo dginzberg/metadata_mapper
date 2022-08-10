@@ -24,12 +24,12 @@ def test_info():
     out_label_ref = ['datetime', 'voice_file', 'to_email', 'from_email', 'languages']
     #  PLAN: Add other software types
     #  'IPC', 'ARC', 'Transonic', 'Voicesoft']/catelas/shared/scripts/metadata_mapper/test_pkg/sample_data
-    ingestion_dir = os.path.abspath(os.path.join( 'metadata_mapper', 'test_pkg', 'sample_data'))
-    speechmatics_dir = os.path.abspath(os.path.join('metadata_mapper', 'test_pkg', 'speechmatics', 'input'))
-    processed_dir = os.path.abspath(os.path.join( 'metadata_mapper', 'test_pkg', 'test_processed'))
-    transcribed_dir = os.path.abspath(os.path.join( 'metadata_mapper', 'test_pkg', 'test_transcribed'))
-    output_dir = os.path.abspath(os.path.join( 'metadata_mapper', 'test_pkg', 'test_output'))
-    temp_dir = os.path.abspath(os.path.join( 'metadata_mapper', 'test_pkg', 'sample_data_backup'))
+    ingestion_mapping_dir = os.path.abspath(os.path.join( 'metadata_mapper', 'test_pkg', 'sample_data'))
+    speechmatics_in_dir = os.path.abspath(os.path.join('test_pkg', 'speechmatics', 'input'))
+    processed_mapping_dir = os.path.abspath(os.path.join('test_pkg', 'test_processed'))
+    speechmatics_out_dir = os.path.abspath(os.path.join( 'test_pkg', 'speechmatics', 'output'))
+    voice_output_dir = os.path.abspath(os.path.join('test_pkg', 'test_voice_out'))
+    temp_dir = os.path.abspath(os.path.join( 'test_pkg', 'sample_data_backup'))
 
 
     return {
@@ -44,11 +44,11 @@ def test_info():
         'type': type,
         'software': software,
         'out_label_ref':out_label_ref,
-        'ingestion_dir': ingestion_dir,
-        'speechmatics_dir': speechmatics_dir,
-        'processed_dir': processed_dir,
-        'transcribed_dir': transcribed_dir,
-        'output_dir': output_dir,
+        'ingestion_mapping_dir': ingestion_mapping_dir,
+        'speechmatics_in_dir': speechmatics_in_dir,
+        'processed_mapping_dir': processed_mapping_dir,
+        'speechmatics_out_dir': speechmatics_out_dir,
+        'voice_output_dir': voice_output_dir,
         'temp_dir': temp_dir,
     }
 
@@ -73,7 +73,7 @@ def test_datetime_format():
 
 @pytest.fixture(autouse=True, scope='module')
 def test_files(test_info):
-    directories.ingestion_dir = test_info.get('ingestion_dir')
+    directories.ingestion_mapping_dir = test_info.get('ingestion_mapping_dir')
     mix_mapper_files = mapper_files(
         [
             os.path.abspath(os.path.join(
@@ -225,7 +225,7 @@ def test_files(test_info):
 
 @pytest.fixture(autouse=True, scope='module')
 def test_json_file(test_info):
-    directories.ingestion_dir = test_info.get('ingestion_dir')
+    directories.ingestion_mapping_dir = test_info.get('ingestion_mapping_dir')
     file = os.path.abspath(os.path.join(
        'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_HK', 'HKT', '20220712', '54644_20220628_1610_277_22680294_81700.json'
     ))
@@ -270,7 +270,7 @@ def test_json_file(test_info):
 
 @pytest.fixture(autouse=True, scope='module')
 def test_xml_file(test_info):
-    directories.ingestion_dir = test_info.get('ingestion_dir')
+    directories.ingestion_mapping_dir = test_info.get('ingestion_mapping_dir')
     file = os.path.abspath(os.path.join(
         'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_HK', 'IPC', '20220520', '815001006900078.xml'
     ))
@@ -356,7 +356,7 @@ def test_xml_file(test_info):
 
 @pytest.fixture(autouse=True, scope='module')
 def test_audio_file(test_info):
-    directories.ingestion_dir = test_info.get('ingestion_dir')
+    directories.ingestion_mapping_dir = test_info.get('ingestion_mapping_dir')
     file = os.path.abspath(os.path.join('metadata_mapper', 'test_pkg','sample_data', 'MBB_VN', 'Hanoi', 'ARC', '20220713', 'IN-20220712_084848_DEV10003092_CH05.wav'
     ))
     map_file = mapper_file(file)
@@ -379,9 +379,9 @@ def test_audio_file(test_info):
 @pytest.fixture(scope='class')
 def init_controller(request, test_info):
     controller = Mapper_Controller(
-        test_info.get('ingestion_dir'),
-        test_info.get('processed_dir'),
-        test_info.get('speechmatics_dir'),
+        test_info.get('ingestion_mapping_dir'),
+        test_info.get('processed_mapping_dir'),
+        test_info.get('speechmatics_in_dir'),
     )
     request.cls.controller = controller
 

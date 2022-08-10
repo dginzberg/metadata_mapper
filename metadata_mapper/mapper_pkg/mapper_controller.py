@@ -16,20 +16,20 @@ from mapper_pkg.types_pkg import Filename_Mapper, Json_Mapper, Xml_Mapper
 class Mapper_Controller:
     def __init__(
         self,
-        ingestion_dir=directories.ingestion_dir,
-        processed_dir=directories.processed_dir,
-        speechmatics_dir=directories.speechmatics_dir,
-        transcribed_dir=directories.transcribed_dir,
+        ingestion_mapping_dir=directories.ingestion_mapping_dir,
+        processed_mapping_dir=directories.processed_mapping_dir,
+        speechmatics_in_dir=directories.speechmatics_in_dir,
+        speechmatics_out_dir=directories.speechmatics_out_dir,
         output_dir=directories.output_dir,
     ):
         self.files = []
         self.processed_files = []
         self.output_files = []
         self.failed_files = []
-        self.ingestion_dir = ingestion_dir
-        self.processed_dir = processed_dir
-        self.speechmatics_dir = speechmatics_dir
-        self.transcribed_dir = transcribed_dir
+        self.ingestion_mapping_dir = ingestion_mapping_dir
+        self.processed_mapping_dir = processed_mapping_dir
+        self.speechmatics_in_dir = speechmatics_in_dir
+        self.speechmatics_out_dir = speechmatics_out_dir
         self.output_dir = output_dir
         self.successful = 0
         self.logger_config()
@@ -52,14 +52,14 @@ class Mapper_Controller:
             self.logger.setLevel(logging.INFO)
 
     def submit_transcribed(self):
-        for file in os.listdir(self.transcribed_dir):
+        for file in os.listdir(self.speechmatics_out_dir):
             os.rename(
-                os.path.join(self.transcribed_dir, file),
+                os.path.join(self.speechmatics_out_dir, file),
                 os.path.join(self.output_dir, file.file_dir,  file.filename),
             )
 
     def ingest_files(self):
-        for root, d_names, f_names in os.walk(self.ingestion_dir):
+        for root, d_names, f_names in os.walk(self.ingestion_mapping_dir):
             self.logger.debug('root: %s', root)
             for f in f_names:
                 try:
@@ -78,7 +78,7 @@ class Mapper_Controller:
             try:
                 xml_mapper = Xml_Mapper(self.files)
                 xml_processed, xml_output, xml_failed = xml_mapper.run_mapper(
-                    self.speechmatics_dir
+                    self.speechmatics_in_dir
                 )
                 self.successful = self.successful + xml_mapper.successful
                 self.processed_files = self.processed_files + xml_processed.all_files
@@ -92,7 +92,7 @@ class Mapper_Controller:
             try:
                 json_mapper = Json_Mapper(self.files)
                 json_processed, json_output, json_failed = json_mapper.run_mapper(
-                    self.speechmatics_dir
+                    self.speechmatics_in_dir
                 )
                 self.successful = self.successful + json_mapper.successful
                 self.processed_files = self.processed_files + json_processed.all_files
@@ -107,7 +107,7 @@ class Mapper_Controller:
             try:
                 filename_mapper = Filename_Mapper(self.files)
                 filename_processed, filename_output, filename_failed = filename_mapper.run_mapper(
-                    self.speechmatics_dir
+                    self.speechmatics_in_dir
                 )
                 self.successful = self.successful + filename_mapper.successful
                 self.processed_files = self.processed_files + filename_processed.all_files
@@ -120,7 +120,7 @@ class Mapper_Controller:
 
     def mv_processed(self):
         for file in self.processed_files:
-            move_dir = self.processed_dir + file.file_dir
+            move_dir = self.processed_mapping_dir + file.file_dir
             if not os.path.isdir(move_dir):
                 os.makedirs(move_dir)
             os.rename(file.file, os.path.join(move_dir, file.filename))

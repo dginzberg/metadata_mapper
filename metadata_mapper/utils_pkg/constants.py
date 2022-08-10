@@ -8,7 +8,7 @@ import os
 
 
 class directories:
-    ingestion_dir = os.path.abspath(
+    ingestion_mapping_dir = os.path.abspath(
         #"/catelas/shared/commsftp/Phase2/MIBG_ID/Cisco/20220801"
         #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220804"
         #"/catelas/shared/commsftp/Phase2/MIBG_IN/Paudium/20220805"
@@ -71,25 +71,24 @@ class directories:
     )
     output_dir = os.path.abspath(
         # "/catelas/shared/scripts/metadata_mapper/environment/test_output"
-        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/test_output"
+        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/mapper_voice_out"
     )
-    processed_dir = os.path.abspath(
+    processed_mapping_dir = os.path.abspath(
         # "/catelas/shared/scripts/metadata_mapper/environment/test_processed"
-        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/test_processed"
+        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/mapper_processed"
     )
     log_dir = os.path.abspath(
         # "/catelas/shared/scripts/metadata_mapper/logging"
-        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/metadata_mapper/logging"
+        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/logging"
     )
-    speechmatics_dir = os.path.abspath(
+    speechmatics_in_dir = os.path.abspath(
         # "/catelas/shared/scripts/metadata_mapper/environment/speechmatics_input"
-        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/speechmatics_input"
+        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/mapper_speechmatics/mapper_input"
         )
-    transcribed_dir = os.path.abspath(
+    speechmatics_out_dir = os.path.abspath(
         # "/catelas/shared/scripts/metadata_mapper/environment/transcribed"
-        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/transcribed"
+        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/mapper_speechmatics/mapper_output"
         )
-    path_sep = "test_pkg"
 
 
 class data_info:

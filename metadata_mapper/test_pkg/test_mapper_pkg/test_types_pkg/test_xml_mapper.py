@@ -53,12 +53,12 @@ class TestXmlMapper:
     # TEST_TODO: test write_json
     def test_xml_write_json(self, test_info):
         for file in self.xml_mapper.files.all_files:
-            out_file =self.xml_mapper.write_json(file, test_info.get("speechmatics_dir"))
+            out_file =self.xml_mapper.write_json(file, test_info.get("speechmatics_in_dir"))
             assert os.path.isfile(out_file.name)
     
     # TEST_TODO: test run_mapper
     def test_xml_run_mapper(self, test_info):
-        processed, output, failed = self.xml_mapper.run_mapper(test_info.get("speechmatics_dir"))
+        processed, output, failed = self.xml_mapper.run_mapper(test_info.get("speechmatics_in_dir"))
         
         assert len(failed.all_files) == 0
         # assert self.xml_mapper.successful == 2

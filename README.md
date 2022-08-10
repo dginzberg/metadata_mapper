@@ -18,9 +18,9 @@
 __Prior to running:__
 - metadata_mapper\metadata_mapper\utils_pkg\constants.py
             - update: 
-                - ingestion_dir : input files
+                - ingestion_mapping_dir : input files
                 - output_dir : final_output
-                - speechmatics_dir : speechmatics input dir
+                - speechmatics_in_dir : speechmatics input dir
                 - log_dir : ligging dir
         
 

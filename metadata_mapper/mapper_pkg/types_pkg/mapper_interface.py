@@ -94,10 +94,10 @@ class Mapper(metaclass=ABCMeta):
             return date_time
 
     # PLAN : organize files by dir and date
-    def write_json(self, file, speechmatics_dir=directories.speechmatics_dir):
-        if not os.path.isdir(speechmatics_dir):
-            os.makedirs(speechmatics_dir)
-        out_file = os.path.abspath(os.path.join(speechmatics_dir, file.filename.split('.')[0]+'.json'))
+    def write_json(self, file, speechmatics_in_dir=directories.speechmatics_in_dir):
+        if not os.path.isdir(speechmatics_in_dir):
+            os.makedirs(speechmatics_in_dir)
+        out_file = os.path.abspath(os.path.join(speechmatics_in_dir, file.filename.split('.')[0]+'.json'))
 
         with open(out_file, "w") as outfile:
             self.logger.debug("Writing output file: %s", out_file)

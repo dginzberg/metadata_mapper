@@ -59,12 +59,12 @@ class TestJsonMapper:
         file = test_json_file.get("mapper_file")
         file.data_dict = test_json_file.get("out_dict")
 
-        out_file = mapper.write_json(file, test_info.get("speechmatics_dir"))
+        out_file = mapper.write_json(file, test_info.get("speechmatics_in_dir"))
 
         assert os.path.isfile(out_file.name)
 
     def test_json_run_mapper(self, test_info, test_files):
-        directories.speechmatics_dir = test_info.get("speechmatics_dir")
+        directories.speechmatics_in_dir = test_info.get("speechmatics_in_dir")
         mapper = Json_Mapper(test_files.get("json_mapper_files"))
 
         processed, output, failed = mapper.run_mapper()
