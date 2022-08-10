@@ -3,8 +3,7 @@
 source .venv/bin/activate
 # source .venv/Scripts/activate
 
-pip install .
-python -m pytest
+pip install metadata_mapper.tar.gz
 echo "Running Mapper:"
 # tail -f /catelas/shared/scripts/metadata_mapper/metadata_mapper/logging/json_mapper.log
 metadata_mapper 

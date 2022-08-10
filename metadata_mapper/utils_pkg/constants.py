@@ -8,7 +8,7 @@ import os
 
 
 class directories:
-    ingestion_dir = os.path.normpath(
+    ingestion_dir = os.path.abspath(
         #"/catelas/shared/commsftp/Phase2/MIBG_ID/Cisco/20220801"
         #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220804"
         #"/catelas/shared/commsftp/Phase2/MIBG_IN/Paudium/20220805"
@@ -65,27 +65,29 @@ class directories:
 	    #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220801"
         #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220802"
 	    #"/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220803"
-	    "/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220805"
-        # "/metadata_mapper/test_pkg/sample_data"
+	    # "/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220805"
+        "/metadata_mapper/test_pkg/sample_data",
+        # "/catelas/shared/commsftp/Phase2/MIBG_HK/HKT/20220808"
     )
-    output_dir = os.path.normpath(
-        "/catelas/shared/test_output"
-        # "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/test_output"
+    output_dir = os.path.abspath(
+        # "/catelas/shared/scripts/metadata_mapper/environment/test_output"
+        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/test_output"
     )
-    processed_dir = os.path.normpath(
-        "/catelas/shared/processed"
-        # "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/test_processed"
+    processed_dir = os.path.abspath(
+        # "/catelas/shared/scripts/metadata_mapper/environment/test_processed"
+        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/test_processed"
     )
-    log_dir = os.path.normpath(
-        "metadata_mapper/logging"
-        # "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/metadata_mapper/logging"
+    log_dir = os.path.abspath(
+        # "/catelas/shared/scripts/metadata_mapper/logging"
+        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/metadata_mapper/logging"
     )
-    speechmatics_dir = os.path.normpath(
+    speechmatics_dir = os.path.abspath(
+        # "/catelas/shared/scripts/metadata_mapper/environment/speechmatics_input"
         "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/speechmatics_input"
         )
-    transcribed_dir = os.path.normpath(
-        "/home/ec2-user/transcribe/output"
-        # "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/transcribed"
+    transcribed_dir = os.path.abspath(
+        # "/catelas/shared/scripts/metadata_mapper/environment/transcribed"
+        "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/transcribed"
         )
     path_sep = "test_pkg"
 

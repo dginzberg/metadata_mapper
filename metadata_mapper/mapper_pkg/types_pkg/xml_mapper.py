@@ -59,6 +59,7 @@ class Xml_Mapper(Json_Mapper):
 
     def ingest_data(self, file):
         try:
+            print("file:%s", file.file)
             with open(file.file) as xml_file:
                 try:
                     file.data_dict = self.flatten_dict(xmltodict.parse(xml_file.read()))

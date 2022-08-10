@@ -23,14 +23,13 @@ def test_info():
     software = ['HKT', 'Cisco', 'Paudium', 'ZoomPhone', 'ZoomMeeting']
     out_label_ref = ['datetime', 'voice_file', 'to_email', 'from_email', 'languages']
     #  PLAN: Add other software types
-    #  'IPC', 'ARC', 'Transonic', 'Voicesoft']
-    ingestion_dir = os.path.abspath(os.path.join('metadata_mapper', 'test_pkg', 'sample_data'))
-    speechmatics_dir = os.path.abspath(os.path.join('metadata_mapper', 'test_pkg', 'speechmatics', 'input'
-    ))
-    processed_dir = os.path.abspath(os.path.join('metadata_mapper', 'test_pkg', 'test_processed'))
-    transcribed_dir = os.path.abspath(os.path.join('metadata_mapper', 'test_pkg', 'test_transcribed'))
-    output_dir = os.path.abspath(os.path.join('metadata_mapper', 'test_pkg', 'test_output'))
-    temp_dir = os.path.abspath(os.path.join('metadata_mapper', 'test_pkg', 'sample_data_backup'))
+    #  'IPC', 'ARC', 'Transonic', 'Voicesoft']/catelas/shared/scripts/metadata_mapper/test_pkg/sample_data
+    ingestion_dir = os.path.abspath(os.path.join( 'metadata_mapper', 'test_pkg', 'sample_data'))
+    speechmatics_dir = os.path.abspath(os.path.join('metadata_mapper', 'test_pkg', 'speechmatics', 'input'))
+    processed_dir = os.path.abspath(os.path.join( 'metadata_mapper', 'test_pkg', 'test_processed'))
+    transcribed_dir = os.path.abspath(os.path.join( 'metadata_mapper', 'test_pkg', 'test_transcribed'))
+    output_dir = os.path.abspath(os.path.join( 'metadata_mapper', 'test_pkg', 'test_output'))
+    temp_dir = os.path.abspath(os.path.join( 'metadata_mapper', 'test_pkg', 'sample_data_backup'))
 
 
     return {
@@ -78,124 +77,124 @@ def test_files(test_info):
     mix_mapper_files = mapper_files(
         [
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_HK', 'IPC', '20220520', '815001006900078.xml'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_HK', 'IPC', '20220520', '815001006900078.xml'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_PH', 'IPC', '20220713', '238001003601700.xml'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_PH', 'IPC', '20220713', '238001003601700.xml'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'Hanoi', 'ARC', '20220713', 'IN-20220712_084848_DEV10003092_CH05.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'Hanoi', 'ARC', '20220713', 'IN-20220712_084848_DEV10003092_CH05.wav'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'Hanoi', 'ARC', '20220713', 'OUT-20220711_082950_DEV10004134_CH01_L139_P114.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'Hanoi', 'ARC', '20220713', 'OUT-20220711_082950_DEV10004134_CH01_L139_P114.wav'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Transonic', '20220713', '01-106AnhTuyet-B----20220713093844.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Transonic', '20220713', '01-106AnhTuyet-B----20220713093844.wav'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Transonic', '20220713', '01-106AnhTuyet-B-104---20220713102138.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Transonic', '20220713', '01-106AnhTuyet-B-104---20220713102138.wav'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Transonic', '20220713', '01-106AnhTuyet-B-90904227697---20220713111155.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Transonic', '20220713', '01-106AnhTuyet-B-90904227697---20220713111155.wav'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Voicesoft', '20220713', '01-109-M.Ha-A----20220712090132.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Voicesoft', '20220713', '01-109-M.Ha-A----20220712090132.wav'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Voicesoft', '20220713', '03-113-T.Trang-B-101---20220607162053.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Voicesoft', '20220713', '03-113-T.Trang-B-101---20220607162053.wav'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_HK', 'HKT', '20220712', '54644_20220628_1610_277_22680294_81700.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_HK', 'HKT', '20220712', '54644_20220628_1610_277_22680294_81700.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_ID', 'Cisco', '20220712', 'ddf717de4e88eda1.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_ID', 'Cisco', '20220712', 'ddf717de4e88eda1.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '07966215700_20220623_125102_709_O_.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '07966215700_20220623_125102_709_O_.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '7966215700_20220623_132133_709_I_.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '7966215700_20220623_132133_709_I_.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '8928178129_20220623_145226_706_I_.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '8928178129_20220623_145226_706_I_.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '09323931304_20220623_125121_720_O_.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '09323931304_20220623_125121_720_O_.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_US', 'ARC', '20220714', '20220429_190018_I_6315672300_107.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_US', 'ARC', '20220714', '20220429_190018_I_6315672300_107.wav'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'Zoom', 'ZoomMeeting', '20220713', 'recording_1632278095044.mp40.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'Zoom', 'ZoomMeeting', '20220713', 'recording_1632278095044.mp40.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'Zoom', 'ZoomPhone', '20220712', 'teste.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'Zoom', 'ZoomPhone', '20220712', 'teste.json'
             )),
         ]
     )
     json_mapper_files = mapper_files(
         [
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_HK', 'HKT', '20220712', '54644_20220628_1610_277_22680294_81700.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_HK', 'HKT', '20220712', '54644_20220628_1610_277_22680294_81700.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_ID', 'Cisco', '20220712', 'ddf717de4e88eda1.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_ID', 'Cisco', '20220712', 'ddf717de4e88eda1.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '07966215700_20220623_125102_709_O_.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '07966215700_20220623_125102_709_O_.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '7966215700_20220623_132133_709_I_.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '7966215700_20220623_132133_709_I_.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '8928178129_20220623_145226_706_I_.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '8928178129_20220623_145226_706_I_.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '8928178129_20220623_145226_706_I_.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '8928178129_20220623_145226_706_I_.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '09323931304_20220623_125121_720_O_.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_IN', 'Paudium', '20220712', '09323931304_20220623_125121_720_O_.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'Zoom', 'ZoomMeeting', '20220713', 'recording_1632278095044.mp40.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'Zoom', 'ZoomMeeting', '20220713', 'recording_1632278095044.mp40.json'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'Zoom', 'ZoomPhone', '20220712', 'test.json'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'Zoom', 'ZoomPhone', '20220712', 'test.json'
             )),
         ]
     )
     xml_mapper_files = mapper_files(
         [
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_HK', 'IPC', '20220520', '815001006900078.xml'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_HK', 'IPC', '20220520', '815001006900078.xml'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_PH', 'IPC', '20220713', '238001003601700.xml'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_PH', 'IPC', '20220713', '238001003601700.xml'
             )),
         ]
     )
     filename_mapper_files = mapper_files(
         [
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'Hanoi', 'ARC', '20220713', 'IN-20220712_084848_DEV10003092_CH05.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'Hanoi', 'ARC', '20220713', 'IN-20220712_084848_DEV10003092_CH05.wav'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'Hanoi', 'ARC', '20220713', 'OUT-20220711_082950_DEV10004134_CH01_L139_P114.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'Hanoi', 'ARC', '20220713', 'OUT-20220711_082950_DEV10004134_CH01_L139_P114.wav'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Transonic', '20220713', '01-106AnhTuyet-B----20220713093844.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Transonic', '20220713', '01-106AnhTuyet-B----20220713093844.wav'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Transonic', '20220713', '01-106AnhTuyet-B-104---20220713102138.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Transonic', '20220713', '01-106AnhTuyet-B-104---20220713102138.wav'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Transonic', '20220713', '01-106AnhTuyet-B-90904227697---20220713111155.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Transonic', '20220713', '01-106AnhTuyet-B-90904227697---20220713111155.wav'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Voicesoft', '20220713', '01-109-M.Ha-A----20220712090132.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Voicesoft', '20220713', '01-109-M.Ha-A----20220712090132.wav'
             )),
             os.path.abspath(os.path.join(
-                'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Voicesoft', '20220713', '03-113-T.Trang-B-101---20220607162053.wav'
+                 'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'HCMC', 'Voicesoft', '20220713', '03-113-T.Trang-B-101---20220607162053.wav'
             )),
             os.path.abspath(os.path.join(
                 'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_US', 'ARC', '20220714', '20220429_190018_I_6315672300_107.wav'
@@ -228,12 +227,12 @@ def test_files(test_info):
 def test_json_file(test_info):
     directories.ingestion_dir = test_info.get('ingestion_dir')
     file = os.path.abspath(os.path.join(
-        'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_HK', 'HKT', '20220712', '54644_20220628_1610_277_22680294_81700.json'
+       'metadata_mapper', 'test_pkg', 'sample_data', 'MIBG_HK', 'HKT', '20220712', '54644_20220628_1610_277_22680294_81700.json'
     ))
     map_file = mapper_file(file)
     filetype = '.json'
     filename = '54644_20220628_1610_277_22680294_81700.json'
-    file_dir = os.path.abspath(os.path.join('metadata_mapper','test_pkg','sample_data','MIBG_HK', 'HKT', '20220712'))
+    file_dir = os.path.abspath(os.path.join('metadata_mapper', 'test_pkg','sample_data','MIBG_HK', 'HKT', '20220712'))
     software = 'HKT'
     region = 'MIBG_HK'
     date_data = '2022-06-28T20:10:50.000000+0000'
@@ -244,7 +243,7 @@ def test_json_file(test_info):
         'Date': '2022-06-28',
         'Time': '16:10:50',
         'Duration': '9',
-        'Direction': 'Outbound',
+        'Direction': 'Outbound', 
     }
     out_dict = {
         'datetime': '2022-06-28T20:10:50.000000+0000',
@@ -358,12 +357,12 @@ def test_xml_file(test_info):
 @pytest.fixture(autouse=True, scope='module')
 def test_audio_file(test_info):
     directories.ingestion_dir = test_info.get('ingestion_dir')
-    file = os.path.abspath(os.path.join('metadata_mapper','test_pkg','sample_data', 'MBB_VN', 'Hanoi', 'ARC', '20220713', 'IN-20220712_084848_DEV10003092_CH05.wav'
+    file = os.path.abspath(os.path.join('metadata_mapper', 'test_pkg','sample_data', 'MBB_VN', 'Hanoi', 'ARC', '20220713', 'IN-20220712_084848_DEV10003092_CH05.wav'
     ))
     map_file = mapper_file(file)
     filetype = '.wav'
     filename = 'IN-20220712_084848_DEV10003092_CH05.wav'
-    file_dir = os.path.abspath(os.path.join('metadata_mapper','test_pkg','sample_data','MBB_VN', 'Hanoi', 'ARC', '20220713'))
+    file_dir = os.path.abspath(os.path.join('metadata_mapper', 'test_pkg','sample_data','MBB_VN', 'Hanoi', 'ARC', '20220713'))
     software = 'ARC'
     region = os.path.join('MBB_VN', 'Hanoi')
     return {

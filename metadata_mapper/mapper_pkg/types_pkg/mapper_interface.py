@@ -31,11 +31,11 @@ class Mapper(metaclass=ABCMeta):
             with open(self.log_file, "w") as outfile:
                 outfile.close
         self.file_handler = logging.FileHandler(
-            self.log_file, mode="a", encoding=None, delay=False
+            self.log_file, mode="w", encoding=None, delay=False
         )
         self.logger = logging.getLogger()
         self.logger.addHandler(self.file_handler)
-        self.logger.setLevel(logging.INFO)
+        self.logger.setLevel(logging.DEBUG)
 
     def final_logging(self):
         self.finish_time = time.time() - self.start_time
@@ -97,7 +97,7 @@ class Mapper(metaclass=ABCMeta):
     def write_json(self, file, speechmatics_dir=directories.speechmatics_dir):
         if not os.path.isdir(speechmatics_dir):
             os.makedirs(speechmatics_dir)
-        out_file = os.path.join(speechmatics_dir, file.filename.split('.')[0]+'.json')
+        out_file = os.path.abspath(os.path.join(speechmatics_dir, file.filename.split('.')[0]+'.json'))
 
         with open(out_file, "w") as outfile:
             self.logger.debug("Writing output file: %s", out_file)

@@ -45,7 +45,7 @@ class Mapper_Controller:
                 with open(self.log_file, "w") as outfile:
                     outfile.close
             self.file_handler = logging.FileHandler(
-                self.log_file, mode="a", encoding=None, delay=False
+                self.log_file, mode="w", encoding=None, delay=False
             )
             self.logger = logging.getLogger()
             self.logger.addHandler(self.file_handler)
