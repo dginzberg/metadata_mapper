@@ -29,18 +29,9 @@ class mapper_file:
             self.filename = os.path.basename(file)
 
     def set_file_dir(self, file):
-        try:
-            if file != "":
-                self.file_dir = os.path.dirname(
-                    file
-                ).strip(os.sep)
-                print('dirname:', self.file_dir)
-                if self.file_dir == "":
-                    self.file_dir = os.path.dirname(file)
-
-        except:
-            self.file_dir = os.path.dirname(file)
-            # self.file_dir = os.path.dirname(file.split())
+           if file != "":
+                self.file_dir = os.path.abspath(os.path.dirname(file))
+      
 
     def set_software(self, file):
         for software in data_info.software:
