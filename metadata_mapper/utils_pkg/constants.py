@@ -80,10 +80,13 @@ class directories:
         "metadata_mapper/logging"
         # "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/metadata_mapper/logging"
     )
-    speechmatics_dir = os.path.normpath("C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/speechmatics_input")
+    speechmatics_dir = os.path.normpath(
+        # "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/speechmatics_input"
+        )
     transcribed_dir = os.path.normpath(
         "/home/ec2-user/transcribe/output"
-        # "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/transcribed")
+        # "C:/Users/Daniel.Ginzberg/Documents/Projects/metadata_mapper/environment/transcribed"
+        )
     path_sep = "sample_data"
 
 
