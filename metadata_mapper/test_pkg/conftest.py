@@ -233,7 +233,7 @@ def test_json_file(test_info):
     map_file = mapper_file(file)
     filetype = '.json'
     filename = '54644_20220628_1610_277_22680294_81700.json'
-    file_dir = os.path.join('MIBG_HK', 'HKT', '20220712')
+    file_dir = os.path.abspath(os.path.join('metadata_mapper','test_pkg','sample_data','MIBG_HK', 'HKT', '20220712'))
     software = 'HKT'
     region = 'MIBG_HK'
     date_data = '2022-06-28T20:10:50.000000+0000'
@@ -278,7 +278,8 @@ def test_xml_file(test_info):
     map_file = mapper_file(file)
     filetype = '.xml'
     filename = '815001006900078.xml'
-    file_dir = os.path.normpath(os.path.join('MBB_HK', 'IPC', '20220520'))
+    file_dir = os.path.abspath(os.path.join(
+        'metadata_mapper', 'test_pkg', 'sample_data','MBB_HK', 'IPC', '20220520'))
     software = 'IPC'
     region = 'MBB_HK'
     date_data = '2022-08-04T14:26:46.500000+0000'
@@ -357,13 +358,12 @@ def test_xml_file(test_info):
 @pytest.fixture(autouse=True, scope='module')
 def test_audio_file(test_info):
     directories.ingestion_dir = test_info.get('ingestion_dir')
-    file = os.path.abspath(os.path.join(
-        'metadata_mapper', 'test_pkg', 'sample_data', 'MBB_VN', 'Hanoi', 'ARC', '20220713', 'IN-20220712_084848_DEV10003092_CH05.wav'
+    file = os.path.abspath(os.path.join('metadata_mapper','test_pkg','sample_data', 'MBB_VN', 'Hanoi', 'ARC', '20220713', 'IN-20220712_084848_DEV10003092_CH05.wav'
     ))
     map_file = mapper_file(file)
     filetype = '.wav'
     filename = 'IN-20220712_084848_DEV10003092_CH05.wav'
-    file_dir = os.path.normpath(os.path.join('MBB_VN', 'Hanoi', 'ARC', '20220713'))
+    file_dir = os.path.abspath(os.path.join('metadata_mapper','test_pkg','sample_data','MBB_VN', 'Hanoi', 'ARC', '20220713'))
     software = 'ARC'
     region = os.path.join('MBB_VN', 'Hanoi')
     return {
