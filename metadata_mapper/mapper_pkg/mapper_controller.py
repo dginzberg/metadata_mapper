@@ -31,6 +31,7 @@ class Mapper_Controller:
         self.speechmatics_dir = speechmatics_dir
         self.transcribed_dir = transcribed_dir
         self.output_dir = output_dir
+        self.successful = 0
         self.logger_config()
 
 
@@ -48,7 +49,7 @@ class Mapper_Controller:
             )
             self.logger = logging.getLogger()
             self.logger.addHandler(self.file_handler)
-            self.logger.setLevel(logging.DEBUG)
+            self.logger.setLevel(logging.INFO)
 
     def submit_transcribed(self):
         for file in os.listdir(self.transcribed_dir):

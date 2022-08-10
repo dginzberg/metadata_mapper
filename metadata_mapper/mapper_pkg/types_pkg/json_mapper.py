@@ -12,10 +12,12 @@ class Json_Mapper(Mapper):
         super().__init__(files)
 
     def ingest_data(self, file):
-        self.logger.debug("Reading input file: %s", file.file_dir + file.filename)
+        self.logger.info("Reading input file")
+        self.logger.debug(file.file_dir + file.filename)
         with open(file.file, "r") as input_json:
             in_data = json.load(input_json)
-            self.logger.debug("Data collected from file: %s", str(in_data))
+            self.logger.debug("Data collected from file")
+            self.logger.debug(str(in_data))
             file.data_dict = in_data
 
     def run_mapper(
@@ -26,22 +28,28 @@ class Json_Mapper(Mapper):
         processed = []
         output = []
         failed = []
+        self.logger.debug("running_mapper")
         for file in self.files.json_files:
-            self.logger.debug("mapping file: %s", file.file)
             try:
+                self.logger.debug("ingesting_data")
+                self.logger.debug(file.file)
                 self.ingest_data(file)
             except:
                 self.logger.error("failed to ingest data from file: %s", file.file)
                 failed.append(file)
                 continue
             try:
+                self.logger.debug("mapping data")
                 self.map_data(file)
             except:
                 self.logger.error("failed to map file: %s, with data: %s", file.file, file.data_dict)
                 failed.append(file)
                 continue
             try:
-                output.append(self.write_json(file, speechmatics_dir).name)
+                output_file = self.write_json(file, speechmatics_dir).name
+                self.logger.debug("writing output")
+                self.logger.debug(output_file )
+                output.append(output_file)
             except:
                 self.logger.error("failed to write json: %s", file.file)
                 failed.append(file)
