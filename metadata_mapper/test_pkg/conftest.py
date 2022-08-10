@@ -25,9 +25,9 @@ def test_info():
     #  PLAN: Add other software types
     #  'IPC', 'ARC', 'Transonic', 'Voicesoft']/catelas/shared/scripts/metadata_mapper/test_pkg/sample_data
     ingestion_mapping_dir = os.path.abspath(os.path.join( 'metadata_mapper', 'test_pkg', 'sample_data'))
-    speechmatics_in_dir = os.path.abspath(os.path.join('test_pkg', 'speechmatics', 'input'))
+    speechmatics_in_dir = os.path.abspath(os.path.join('test_pkg', 'test_speechmatics', 'test_input'))
     processed_mapping_dir = os.path.abspath(os.path.join('test_pkg', 'test_processed'))
-    speechmatics_out_dir = os.path.abspath(os.path.join( 'test_pkg', 'speechmatics', 'output'))
+    speechmatics_out_dir = os.path.abspath(os.path.join( 'test_pkg', 'test_speechmatics', 'test_output'))
     voice_output_dir = os.path.abspath(os.path.join('test_pkg', 'test_voice_out'))
     temp_dir = os.path.abspath(os.path.join( 'test_pkg', 'sample_data_backup'))
 
